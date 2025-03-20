@@ -11,7 +11,7 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/rapidrend/rapidrend/releases/tag/v0.2.0">Download</a>
+  <a href="https://github.com/rapidrend/rapidrend/releases/tag/v0.2.1">Download</a>
 </p>
 
 ## 🌐 Português
