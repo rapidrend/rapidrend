@@ -3,8 +3,39 @@
 #include <stdlib.h>
 #include <string.h>
 #include <direct.h> // For _getcwd
+#include <shellapi.h> // For ShellExecute
+
+char* add_quotes(const char* path) {
+    char* quoted_path = malloc(strlen(path) + 3); // +2 for quotes, +1 for null terminator
+    sprintf(quoted_path, "\"%s\"", path);
+    return quoted_path;
+}
+
+BOOL is_vc_redist_installed() {
+    HKEY hKey;
+    LONG result = RegOpenKeyExA(HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\VisualStudio\\14.0\\VC\\Runtimes\\x64", 0, KEY_READ, &hKey);
+    if (result == ERROR_SUCCESS) {
+        DWORD installed;
+        DWORD dataSize = sizeof(DWORD);
+        result = RegQueryValueExA(hKey, "Installed", NULL, NULL, (LPBYTE)&installed, &dataSize);
+        RegCloseKey(hKey);
+        if (result == ERROR_SUCCESS && installed == 1) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
 
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+    // Check if Visual C++ Redistributable is installed
+    if (!is_vc_redist_installed()) {
+        int msgboxID = MessageBoxA(NULL, "Visual C++ Redistributable is not installed. Do you want to download it?", "Visual C++ Redistributable", MB_ICONQUESTION | MB_YESNO);
+        if (msgboxID == IDYES) {
+            ShellExecuteA(NULL, "open", "https://aka.ms/vs/17/release/vc_redist.x64.exe", NULL, NULL, SW_SHOWNORMAL);
+        }
+        return 1;
+    }
+
     // Get the path of the running binary
     char exe_path[MAX_PATH];
     if (!GetModuleFileNameA(NULL, exe_path, MAX_PATH)) {
@@ -57,9 +88,9 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
         return 1;
     }
 
-    // Set the first two arguments
-    pargv[0] = qode_path;
-    pargv[1] = program_path;
+    // Set the first two arguments with quotes
+    pargv[0] = add_quotes(qode_path);
+    pargv[1] = add_quotes(program_path);
 
     // Append additional arguments from argv
     for (int i = 1; i < argc; i++) {
