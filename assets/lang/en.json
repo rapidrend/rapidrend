@@ -1,0 +1,326 @@
+{
+  "commands": {
+    "blob": {
+      "name": "Blob",
+      "description": "Makes the file squishy like a blob.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the animation (0.05s-10s)."
+        }
+      }
+    },
+    "bouncy": {
+      "name": "Bouncy",
+      "description": "Makes the file bounce around on a transparent background.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        }
+      }
+    },
+    "circle": {
+      "name": "Circle",
+      "description": "Makes the file move in a circular motion.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Width of the animation area."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Height of the animation area."
+        },
+        "fileWidth": {
+          "name": "File Width",
+          "desc": "Width of the file in the animation."
+        },
+        "fileHeight": {
+          "name": "File Height",
+          "desc": "Height of the file in the animation."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the animation (0.05s-10s)."
+        }
+      }
+    },
+    "color": {
+      "name": "Color",
+      "description": "Applies a color tint to the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "r": {
+          "name": "Red",
+          "desc": "Red component (0-255)."
+        },
+        "g": {
+          "name": "Green",
+          "desc": "Green component (0-255)."
+        },
+        "b": {
+          "name": "Blue",
+          "desc": "Blue component (0-255)."
+        }
+      }
+    },
+    "rainbow": {
+      "name": "Rainbow",
+      "description": "Applies a rainbow effect to the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the effect (max 10s)."
+        }
+      }
+    },
+    "tint": {
+      "name": "Tint",
+      "description": "Applies a tint using RGBA values.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "r": {
+          "name": "Red",
+          "desc": "Red component (0-255)."
+        },
+        "g": {
+          "name": "Green",
+          "desc": "Green component (0-255)."
+        },
+        "b": {
+          "name": "Blue",
+          "desc": "Blue component (0-255)."
+        },
+        "a": {
+          "name": "Alpha",
+          "desc": "Transparency component (0-255)."
+        }
+      }
+    },
+    "slowdown": {
+      "name": "Slowdown",
+      "description": "Slows down the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "Slowdown factor (1-6)."
+        }
+      }
+    },
+    "speedup": {
+      "name": "Speedup",
+      "description": "Speeds up the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "Speedup factor (1-6)."
+        }
+      }
+    },
+    "crop": {
+      "name": "Crop",
+      "description": "Crops the file according to specified dimensions.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "x": {
+          "name": "X Offset",
+          "desc": "Horizontal offset for cropping."
+        },
+        "y": {
+          "name": "Y Offset",
+          "desc": "Vertical offset for cropping."
+        },
+        "w": {
+          "name": "Width",
+          "desc": "Width of the cropped area."
+        },
+        "h": {
+          "name": "Height",
+          "desc": "Height of the cropped area."
+        }
+      }
+    },
+    "enlarge": {
+      "name": "Enlarge",
+      "description": "Increases the size of the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "Enlargement factor (1-6)."
+        }
+      }
+    },
+    "shrink": {
+      "name": "Shrink",
+      "description": "Reduces the size of the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "Reduction factor (1-6)."
+        }
+      }
+    },
+    "blend": {
+      "name": "Blend",
+      "description": "Combines two files using a blend mode.",
+      "args": {
+        "input1": {
+          "name": "Base File",
+          "desc": "The base file."
+        },
+        "input2": {
+          "name": "Blend File",
+          "desc": "The file to blend."
+        },
+        "mode": {
+          "name": "Blend Mode",
+          "desc": "Blend mode to use."
+        }
+      }
+    },
+    "overlay": {
+      "name": "Overlay",
+      "description": "Overlays one file onto another with precise controls.",
+      "args": {
+        "baseFile": {
+          "name": "Base File",
+          "desc": "Base file for overlay."
+        },
+        "overlayFile": {
+          "name": "Overlay File",
+          "desc": "File to overlay."
+        },
+        "origin": {
+          "name": "Origin Position",
+          "desc": "Anchor point for overlay."
+        },
+        "offsetX": {
+          "name": "X Offset",
+          "desc": "Horizontal offset."
+        },
+        "offsetY": {
+          "name": "Y Offset",
+          "desc": "Vertical offset."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Overlay width."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Overlay height."
+        },
+        "keepAspect": {
+          "name": "Keep Aspect Ratio",
+          "desc": "Maintain original aspect ratio."
+        },
+        "startTime": {
+          "name": "Start Time",
+          "desc": "Start time (hh:mm:ss)."
+        },
+        "endTime": {
+          "name": "End Time",
+          "desc": "End time (hh:mm:ss)."
+        }
+      }
+    }
+  },
+  "globalArgs": {
+    "encodingPreset": {
+      "name": "Encoding Preset",
+      "desc": "The preset used for encoding. Slower presets provide better compression."
+    },
+    "output": {
+      "name": "Output",
+      "desc": "The output file path."
+    }
+  },
+  "ui": {
+    "sidebarTitle": "Commands",
+    "mainTitle": "Welcome to RapidRend!",
+    "mainDescription": "Select a command from the sidebar to begin.",
+    "executeButton": "Execute",
+    "executingButton": "Executing...",
+    "searchPlaceholder": "Search...",
+    "saveFile": "Save...",
+    "openFile": "Open",
+    "fileSaved": "File saved to",
+    "readingFile": "Reading file...",
+    "processedFile": "Processed file",
+    "commandOutput": "Output",
+    "argFields": {
+      "string": "Enter",
+      "file": "Select...",
+      "number": "Enter a number",
+      "pixels": "Enter pixels or percentage",
+      "timestamp": "Enter a timestamp",
+      "unsupported": "Unsupported argument type"
+    }
+  },
+  "infoPost": {
+    "validateFile": "Validating file from path",
+    "cantProcessFile": "File can't be processed, reason",
+    "fileValidated": "File \"%s\" was successfully validated"
+  },
+  "errorMessages": {
+    "fileNotFound": "File not found",
+    "unsupportedFileType": "Unsupported file of type",
+    "unsupportedFileExt": "Unsupported file of extension",
+    "invalidArgument": "Invalid argument",
+    "invalidCommand": "This command does not exist"
+  },
+  "errorDisplay": {
+    "title": "Error",
+    "format": "%s Error!",
+    "openFile": "File Opening",
+    "argumentParse": "Argument Parsing",
+    "argumentFieldParse": "Argument Field Parsing",
+    "argumentValidate": "Argument Validation",
+    "commandExecute": "Command Execution"
+  },
+  "categories": {
+    "animation": "Animation",
+    "color": "Color",
+    "duration": "Duration",
+    "resizing": "Resizing",
+    "overlaying": "Overlaying"
+  }
+}

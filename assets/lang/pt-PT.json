@@ -1,0 +1,322 @@
+{
+  "commands": {
+    "blob": {
+      "name": "Bolha",
+      "description": "Torna o ficheiro flexível como uma bolha.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação (0.05s-10s)."
+        }
+      }
+    },
+    "bouncy": {
+      "name": "Saltitante",
+      "description": "Faz o ficheiro saltar num fundo transparente.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        }
+      }
+    },
+    "circle": {
+      "name": "Círculo",
+      "description": "Faz o ficheiro mover-se em círculo.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura da área de animação."
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura da área de animação."
+        },
+        "fileWidth": {
+          "name": "Largura do Ficheiro",
+          "desc": "Largura do ficheiro na animação."
+        },
+        "fileHeight": {
+          "name": "Altura do Ficheiro",
+          "desc": "Altura do ficheiro na animação."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação (0.05s-10s)."
+        }
+      }
+    },
+    "color": {
+      "name": "Cor",
+      "description": "Aplica uma tonalidade de cor ao ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "r": {
+          "name": "Vermelho",
+          "desc": "Componente vermelha (0-255)."
+        },
+        "g": {
+          "name": "Verde",
+          "desc": "Componente verde (0-255)."
+        },
+        "b": {
+          "name": "Azul",
+          "desc": "Componente azul (0-255)."
+        }
+      }
+    },
+    "rainbow": {
+      "name": "Arco-Íris",
+      "description": "Aplica um efeito de arco-íris ao ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração do efeito (máx. 10s)."
+        }
+      }
+    },
+    "tint": {
+      "name": "Tonalidade",
+      "description": "Aplica uma tonalidade usando valores RGBA.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "r": {
+          "name": "Vermelho",
+          "desc": "Componente vermelha (0-255)."
+        },
+        "g": {
+          "name": "Verde",
+          "desc": "Componente verde (0-255)."
+        },
+        "b": {
+          "name": "Azul",
+          "desc": "Componente azul (0-255)."
+        },
+        "a": {
+          "name": "Transparência",
+          "desc": "Componente de transparência (0-255)."
+        }
+      }
+    },
+    "slowdown": {
+      "name": "Abrandar",
+      "description": "Reduz a velocidade do ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Fator de redução (1-6)."
+        }
+      }
+    },
+    "speedup": {
+      "name": "Acelerar",
+      "description": "Aumenta a velocidade do ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Fator de aceleração (1-6)."
+        }
+      }
+    },
+    "crop": {
+      "name": "Recortar",
+      "description": "Recorta o ficheiro conforme dimensões especificadas.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "x": {
+          "name": "Deslocamento X",
+          "desc": "Deslocamento horizontal para recorte."
+        },
+        "y": {
+          "name": "Deslocamento Y",
+          "desc": "Deslocamento vertical para recorte."
+        },
+        "w": {
+          "name": "Largura",
+          "desc": "Largura da área recortada."
+        },
+        "h": {
+          "name": "Altura",
+          "desc": "Altura da área recortada."
+        }
+      }
+    },
+    "enlarge": {
+      "name": "Ampliar",
+      "description": "Aumenta o tamanho do ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Fator de ampliação (1-6)."
+        }
+      }
+    },
+    "shrink": {
+      "name": "Reduzir",
+      "description": "Reduz o tamanho do ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Fator de redução (1-6)."
+        }
+      }
+    },
+    "blend": {
+      "name": "Misturar",
+      "description": "Combina dois ficheiros com um modo de mistura.",
+      "args": {
+        "input1": {
+          "name": "Ficheiro Base",
+          "desc": "O ficheiro base."
+        },
+        "input2": {
+          "name": "Ficheiro Secundário",
+          "desc": "O ficheiro para misturar."
+        },
+        "mode": {
+          "name": "Modo de Mistura",
+          "desc": "Modo de mistura a utilizar."
+        }
+      }
+    },
+    "overlay": {
+      "name": "Sobreposição",
+      "description": "Sobrepoe um ficheiro a outro com controlo preciso.",
+      "args": {
+        "baseFile": {
+          "name": "Ficheiro Base",
+          "desc": "Ficheiro base para sobreposição."
+        },
+        "overlayFile": {
+          "name": "Ficheiro Sobreposto",
+          "desc": "Ficheiro a sobrepor."
+        },
+        "origin": {
+          "name": "Posição de Origem",
+          "desc": "Ponto de ancoragem da sobreposição."
+        },
+        "offsetX": {
+          "name": "Deslocamento X",
+          "desc": "Deslocamento horizontal."
+        },
+        "offsetY": {
+          "name": "Deslocamento Y",
+          "desc": "Deslocamento vertical."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura da sobreposição."
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura da sobreposição."
+        },
+        "keepAspect": {
+          "name": "Manter Proporção",
+          "desc": "Manter proporção original."
+        },
+        "startTime": {
+          "name": "Tempo Inicial",
+          "desc": "Hora de início (hh:mm:ss)."
+        },
+        "endTime": {
+          "name": "Tempo Final",
+          "desc": "Hora de fim (hh:mm:ss)."
+        }
+      }
+    }
+  },
+  "globalArgs": {
+    "encodingPreset": {
+      "name": "Predefinição de Codificação",
+      "desc": "A predefinição usada para a codificação. Predefinições mais lentas resultam em melhor compressão."
+    }
+  },
+  "ui": {
+    "sidebarTitle": "Comandos",
+    "mainTitle": "Bem-vindo ao RapidRend!",
+    "mainDescription": "Selecione um comando na barra lateral para começar.",
+    "executeButton": "Executar",
+    "executingButton": "A executar...",
+    "searchPlaceholder": "Pesquisar...",
+    "saveFile": "Salvar...",
+    "openFile": "Abrir",
+    "fileSaved": "Ficheiro salvo em",
+    "readingFile": "A ler ficheiro...",
+    "processedFile": "Ficheiro processado",
+    "commandOutput": "Saída",
+    "argFields": {
+      "string": "Insira",
+      "file": "Selecionar...",
+      "number": "Insira um número",
+      "pixels": "Insira pixéis ou percentagem",
+      "timestamp": "Insira um tempo",
+      "unsupported": "Tipo de argumento não suportado"
+    }
+  },
+  "infoPost": {
+    "validateFile": "A validar ficheiro pelo caminho",
+    "cantProcessFile": "O ficheiro não pode ser processado, razão",
+    "fileValidated": "Ficheiro \"%s\" validado com sucesso"
+  },
+  "errorMessages": {
+    "fileNotFound": "Ficheiro não encontrado:",
+    "unsupportedFileType": "Ficheiro não suportado de tipo",
+    "unsupportedFileExt": "Ficheiro não suportado de extensão",
+    "invalidArgument": "Argumento inválido:",
+    "invalidCommand": "Este comando não existe"
+  },
+  "errorDisplay": {
+    "title": "Erro",
+    "format": "Erro de %s!",
+    "openFile": "abertura de ficheiro",
+    "argumentParse": "análise de argumentos",
+    "argumentFieldParse": "análise de campos de argumentos",
+    "argumentValidate": "validação de argumentos",
+    "commandExecute": "execução de comando"
+  },
+  "categories": {
+    "animation": "Animação",
+    "color": "Cor",
+    "duration": "Duração",
+    "resizing": "Redimensionamento",
+    "overlaying": "Sobreposição"
+  }
+}
