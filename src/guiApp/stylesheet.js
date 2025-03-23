@@ -1,3 +1,5 @@
+const path = require("path");
+
 const stylesheet = (isDarkTheme) => `
 /* General style */
 
@@ -50,7 +52,7 @@ QComboBox::down-arrow {
     background: none;
     color: none;
     border: none;
-    image: url(assets/gui/${isDarkTheme ? "dark" : "light"}/dropdown.svg);
+    image: url("${path.join(appPath, "assets", "gui", isDarkTheme ? "dark" : "light", "dropdown.svg")}");
 }
 
 QScrollBar {
@@ -106,7 +108,7 @@ QCheckBox::indicator:hover {
 QCheckBox::indicator:checked {
     background-color: ${isDarkTheme ? "#4CAF50" : "#4CAF50"};
     border-color: ${isDarkTheme ? "#4CAF50" : "#4CAF50"};
-    image: url("assets/gui/checkmark.svg");
+    image: url("${path.join(appPath, "assets", "gui", "checkmark.svg")}");
 }
 
 QCheckBox::indicator:disabled {

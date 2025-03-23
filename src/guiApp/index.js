@@ -51,7 +51,7 @@ class GUIApp {
         this.executing = false;
 
         this.appWindow = new QMainWindow();
-        this.appWindow.setWindowIcon(new QIcon("assets/gui/app.svg"));
+        this.appWindow.setWindowIcon(new QIcon(path.join(appPath, "assets", "gui", "app.svg")));
         this.appWindow.setWindowTitle("RapidRend");
         this.appWindow.resize(this.minSize.width(), this.minSize.height());
 
@@ -275,7 +275,7 @@ class GUIApp {
 
         const errIcon = new QLabel();
         const errImage = new QPixmap();
-        errImage.load("assets/gui/warn.png");
+        errImage.load(path.join(appPath, "assets", "gui", "warn.png"));
         errIcon.setPixmap(errImage);
         errIcon.setAlignment(AlignmentFlag.AlignCenter);
         errLayout.addWidget(errIcon);
@@ -406,7 +406,7 @@ class GUIApp {
 
                 case "video": {
                     const imageLabel = new QLabel();
-                    const pixmap = new QPixmap(`assets/gui/${this.isDarkTheme ? "dark" : "light"}/video.svg`);
+                    const pixmap = new QPixmap(path.join(appPath, "assets", "gui", this.isDarkTheme ? "dark" : "light", "video.svg"));
 
                     let containerSize = this.appWindow.size();
                     let scaledPixmap = pixmap.scaled(
@@ -434,8 +434,8 @@ class GUIApp {
 
                 case "audio": {
                     const imageLabel = new QLabel();
-                    const pixmap = new QPixmap(`assets/gui/${this.isDarkTheme ? "dark" : "light"}/audio.svg`);
-
+                    const pixmap = new QPixmap(path.join(appPath, "assets", "gui", this.isDarkTheme ? "dark" : "light", "audio.svg"));
+                            
                     let containerSize = this.appWindow.size();
                     let scaledPixmap = pixmap.scaled(
                         Math.min(containerSize.width() / 2, pixmap.width()),
@@ -734,7 +734,7 @@ class GUIApp {
                         }
 
                         case "video": {
-                            const pixmap = new QPixmap(`assets/gui/${this.isDarkTheme ? "dark" : "light"}/video.svg`);
+                            const pixmap = new QPixmap(path.join(appPath, "assets", "gui", this.isDarkTheme ? "dark" : "light", "video.svg"));
                             const containerSize = inputField.size();
                             const scaledPixmap = pixmap.scaled(
                                 Math.min(containerSize.width(), pixmap.width()),
@@ -749,7 +749,7 @@ class GUIApp {
                         }
 
                         case "audio": {
-                            const pixmap = new QPixmap(`assets/gui/${this.isDarkTheme ? "dark" : "light"}/audio.svg`);
+                            const pixmap = new QPixmap(path.join(appPath, "assets", "gui", this.isDarkTheme ? "dark" : "light", "audio.svg"));
                             const containerSize = inputField.size();
                             const scaledPixmap = pixmap.scaled(
                                 Math.min(containerSize.width(), pixmap.width()),
