@@ -1,3 +1,7 @@
+const path = require("path");
+
+global.appPath = path.normalize(path.join(__dirname, ".."));
+
 const App = require("#main");
 
 async function main() {
