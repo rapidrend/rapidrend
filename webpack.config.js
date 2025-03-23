@@ -36,7 +36,7 @@ module.exports = (env, argv) => {
           use: [
             {
               loader: "native-addon-loader",
-              options: { name: "[name]-[hash].[ext]" }
+              options: { name: "../node_modules/@nodegui/nodegui/build/Release/[name].[ext]" }
             }
           ]
         }
