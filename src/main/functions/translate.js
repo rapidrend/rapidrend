@@ -4,7 +4,7 @@ const fs = require("fs-extra");
 module.exports = {
     loadTranslations(lang = "en") {
         try {
-            const filePath = path.join('assets/lang', `${lang}.json`);
+            const filePath = path.join(appPath, "assets", "lang", `${lang}.json`);
 
             global.translations = fs.readJsonSync(filePath);
             global.currentLanguage = lang;

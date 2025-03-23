@@ -765,7 +765,7 @@ const functions = {
                     return;
                 }
 
-                exargs[0] = `${exargs[0]}`
+                exargs[0] = `"${exargs[0]}"`
             }
 
             code = exargs.join(" ")
