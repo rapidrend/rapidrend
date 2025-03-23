@@ -140,9 +140,9 @@ module.exports = {
     },
 
     alt: {
-        ffmpeg: path.join("bin", `ffmpeg${os.platform() == "win32" ? ".exe" : ""}`),
-        ffprobe: path.join("bin", `ffprobe${os.platform() == "win32" ? ".exe" : ""}`),
-        gmic: path.join("bin", `ffprobe${os.platform() == "win32" ? ".exe" : ""}`),
-        magick: path.join("bin", `magick${os.platform() == "win32" ? ".exe" : ""}`)
+        ffmpeg: path.join(appPath, "bin", `ffmpeg${os.platform() == "win32" ? ".exe" : ""}`),
+        ffprobe: path.join(appPath, "bin", `ffprobe${os.platform() == "win32" ? ".exe" : ""}`),
+        gmic: path.join(appPath, "bin", `ffprobe${os.platform() == "win32" ? ".exe" : ""}`),
+        magick: path.join(appPath, "bin", `magick${os.platform() == "win32" ? ".exe" : ""}`)
     }
 }
