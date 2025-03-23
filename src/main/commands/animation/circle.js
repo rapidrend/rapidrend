@@ -1,3 +1,5 @@
+const path = require("path");
+
 const { execPromise } = require("#functions/media");
 const { makeTempPath } = require("#functions/filesystem");
 const { translate } = require("#functions/translate");
@@ -100,12 +102,12 @@ module.exports = {
         const file = args.input;
         const { width, height, fileWidth, fileHeight, duration } = args;
 
-        const { path } = file;
+        const { path: filePath } = file;
 
         let tempPath = makeTempPath("gif");
 
-        await execPromise(`ffmpeg -stream_loop -1 -t ${duration} -i "${path}" \
-            -r 50 -stream_loop -1 -t ${duration} -i assets/image/transparent.png \
+        await execPromise(`ffmpeg -stream_loop -1 -t ${duration} -i "${filePath}" \
+            -r 50 -stream_loop -1 -t ${duration} -i ${path.join(appPath, "assets", "image", "transparent.png")} \
             -filter_complex "[0:v]fps=50,scale=${fileWidth}:${fileHeight}:force_original_aspect_ratio=decrease[overlay];[1:v]scale=${width}:${height}[transparent];\
             [transparent][overlay]overlay=x=((W-w)/2)-cos(PI/2*(t*4/${duration}))*${(width / 2) - (fileWidth / 2)}:y=((H-h)/2)-sin(PI/2*(t*4/${duration}))*${(height / 2) - (fileHeight / 2)}:format=auto,split[pout][ppout];\
             [ppout]palettegen=reserve_transparent=1[palette];[pout][palette]paletteuse=alpha_threshold=128[out]" \
