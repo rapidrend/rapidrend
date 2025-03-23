@@ -108,6 +108,7 @@
     "applicationTitle": "RapidRend",
     "nsHumanReadableCopyright": "Copyright (c) 2024-2025 rapidrend",
     "cfBundleIdentifier": "com.rapidrend.rapidrend",
+    "cfBundleExecutable": "rapidrend",
     "prePack": [
       "mv $dmgStep_dmgResourcesDirectory/rapidrend $dmgStep_dmgMacOSDirectory/"
     ]
