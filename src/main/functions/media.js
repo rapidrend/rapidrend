@@ -754,9 +754,6 @@ const functions = {
         const app = global.app;
 
         return new Promise(async (resolve, reject) => {
-            var args = code.match(/("[^"\\]*(?:\\[\S\s][^"\\]*)*"|'[^'\\]*(?:\\[\S\s][^'\\]*)*'|\/[^\/\\]*(?:\\[\S\s][^\/\\]*)*\/[gimy]*(?=\s|$)|(?:\\\s|\S)+)/g);
-            var command = args.splice(0, 1)[0];
-
             const exargs = code.split(" ");
 
             if (!commandExists(exargs[0]) && processingTools.alt[exargs[0]]) {
@@ -772,19 +769,17 @@ const functions = {
 
             code = exargs.join(" ");
 
-            args = code.match(/("[^"\\]*(?:\\[\S\s][^"\\]*)*"|'[^'\\]*(?:\\[\S\s][^'\\]*)*'|\/[^\/\\]*(?:\\[\S\s][^\/\\]*)*\/[gimy]*(?=\s|$)|(?:\\\s|\S)+)/g);
-            command = args.splice(0, 1)[0];
+            const args = code.match(/("[^"\\]*(?:\\[\S\s][^"\\]*)*"|'[^'\\]*(?:\\[\S\s][^'\\]*)*'|\/[^\/\\]*(?:\\[\S\s][^\/\\]*)*\/[gimy]*(?=\s|$)|(?:\\\s|\S)+)/g).map(arg => {
+                if (arg.match(/^".+"$/)) return arg.slice(1, -1);
+                else return arg;
+            });
+            const command = args.splice(0, 1)[0];
 
             let stdout = [];
             let stderr = [];
             let exited = false;
 
-            const proc = spawn(command, args, {
-                shell: true,
-                env: {
-                    ...process.env
-                }
-            });
+            const proc = spawn(command, args);
 
             app.childProcesses[proc.pid] = proc;
 

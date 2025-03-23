@@ -9,7 +9,6 @@ const { cleanTmpDirs } = require("#functions/filesystem");
 class App {
     constructor(cfg = {}) {
         // setting up options
-
         this.config = {
             cli: false,
             tempFolder: path.join(tmpdir(), "rapidrend"),
@@ -37,10 +36,9 @@ class App {
     }
 
     killProcesses() {
-        Object.values(this.childProcesses).forEach(proc => {
-            proc.kill();
-        });
+        Object.keys(this.childProcesses).forEach(pid => process.kill(pid));
         this.childProcesses = {};
+        process.exit();
     }
 }
 
