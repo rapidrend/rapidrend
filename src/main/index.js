@@ -27,8 +27,20 @@ class App {
 
         this.infoPost = [];
         this.infoPostEmitter = new EventEmitter();
+        this.childProcesses = {};
 
         cleanTmpDirs(this.config.tempFolder);
+
+        process.on("SIGINT", () => this.killProcesses());
+        process.on("SIGTERM", () => this.killProcesses());
+        process.on("exit", () => this.killProcesses());
+    }
+
+    killProcesses() {
+        Object.values(this.childProcesses).forEach(proc => {
+            proc.kill();
+        });
+        this.childProcesses = {};
     }
 }
 

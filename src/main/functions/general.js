@@ -55,6 +55,7 @@ module.exports = {
         console.log(message);
 
         for (const m of message.split("\n")) {
+            if (!m.trim()) continue;
             app.infoPost.push(m);
             app.infoPostEmitter.emit("event", m);
         }

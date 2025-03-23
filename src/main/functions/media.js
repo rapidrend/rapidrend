@@ -751,78 +751,83 @@ const functions = {
     },
 
     async execPromise(code) {
-        return new Promise(async (resolve, reject) => {
-            var args = code.match(/("[^"\\]*(?:\\[\S\s][^"\\]*)*"|'[^'\\]*(?:\\[\S\s][^'\\]*)*'|\/[^\/\\]*(?:\\[\S\s][^\/\\]*)*\/[gimy]*(?=\s|$)|(?:\\\s|\S)+)/g)
-            var command = args.splice(0, 1)[0]
+        const app = global.app;
 
-            const exargs = code.split(" ")
+        return new Promise(async (resolve, reject) => {
+            var args = code.match(/("[^"\\]*(?:\\[\S\s][^"\\]*)*"|'[^'\\]*(?:\\[\S\s][^'\\]*)*'|\/[^\/\\]*(?:\\[\S\s][^\/\\]*)*\/[gimy]*(?=\s|$)|(?:\\\s|\S)+)/g);
+            var command = args.splice(0, 1)[0];
+
+            const exargs = code.split(" ");
 
             if (!commandExists(exargs[0]) && processingTools.alt[exargs[0]]) {
-                exargs[0] = processingTools.alt[exargs[0]]
+                exargs[0] = processingTools.alt[exargs[0]];
 
                 if (!fs.existsSync(exargs[0]) && !commandExists(exargs[0])) {
                     reject(`${exargs[0]} does not exist.`);
                     return;
                 }
 
-                exargs[0] = `"${exargs[0]}"`
+                exargs[0] = `"${exargs[0]}"`;
             }
 
-            code = exargs.join(" ")
+            code = exargs.join(" ");
 
-            args = code.match(/("[^"\\]*(?:\\[\S\s][^"\\]*)*"|'[^'\\]*(?:\\[\S\s][^'\\]*)*'|\/[^\/\\]*(?:\\[\S\s][^\/\\]*)*\/[gimy]*(?=\s|$)|(?:\\\s|\S)+)/g)
-            command = args.splice(0, 1)[0]
+            args = code.match(/("[^"\\]*(?:\\[\S\s][^"\\]*)*"|'[^'\\]*(?:\\[\S\s][^'\\]*)*'|\/[^\/\\]*(?:\\[\S\s][^\/\\]*)*\/[gimy]*(?=\s|$)|(?:\\\s|\S)+)/g);
+            command = args.splice(0, 1)[0];
 
-            let stdout = []
-            let stderr = []
-            let exited = false
+            let stdout = [];
+            let stderr = [];
+            let exited = false;
 
             const proc = spawn(command, args, {
                 shell: true,
                 env: {
                     ...process.env
                 }
-            })
+            });
+
+            app.childProcesses[proc.pid] = proc;
 
             function handleExit() {
-                if (!exited) return
-                const out = stdout.join("\n") || stderr.join("\n")
-                proc.removeAllListeners()
-                resolve(out)
+                if (!exited) return;
+                const out = stdout.join("\n") || stderr.join("\n");
+                proc.removeAllListeners();
+                delete app.childProcesses[proc.pid];
+                resolve(out);
             }
 
             proc.stdout.on("data", (buffer) => {
-                if (!buffer.toString()) return
-                infoPost(buffer.toString())
-                stdout.push(buffer.toString())
-            })
+                if (!buffer.toString()) return;
+                infoPost(buffer.toString());
+                stdout.push(buffer.toString());
+            });
 
             proc.stderr.on("data", (buffer) => {
-                if (!buffer.toString()) return
-                infoPost(buffer.toString())
-                stderr.push(buffer.toString())
-            })
+                if (!buffer.toString()) return;
+                infoPost(buffer.toString());
+                stderr.push(buffer.toString());
+            });
 
             proc.stdout.on("close", () => {
-                exited = true
-                handleExit()
-            })
+                exited = true;
+                handleExit();
+            });
 
             proc.stderr.on("close", () => {
-                exited = true
-                handleExit()
-            })
+                exited = true;
+                handleExit();
+            });
 
             proc.on("error", (err) => {
-                proc.removeAllListeners()
-                resolve(err.message)
-            })
+                proc.removeAllListeners();
+                resolve(err.message);
+            });
 
             proc.on("exit", () => {
-                exited = true
-                handleExit()
-            })
-        })
+                exited = true;
+                handleExit();
+            });
+        });
     }
 };
 

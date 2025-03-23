@@ -34,8 +34,10 @@ module.exports = {
 
         if (!fs.existsSync(tempFolder)) fs.mkdirSync(tempFolder);
 
-        fs.readdirSync(tempFolder).forEach((dir) => {
-            fs.rmSync(path.join(tempFolder, dir), { recursive: true });
-        });
+        try {
+            fs.readdirSync(tempFolder).forEach((dir) => {
+                fs.rmSync(path.join(tempFolder, dir), { recursive: true });
+            });
+        } catch (_) {}
     }
 };

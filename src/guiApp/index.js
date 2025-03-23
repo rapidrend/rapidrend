@@ -55,8 +55,6 @@ class GUIApp {
         this.appWindow.setWindowTitle("RapidRend");
         this.appWindow.resize(this.minSize.width(), this.minSize.height());
 
-        this.appWindow.addEventListener(WidgetEventTypes.Close, () => Object.values(widgets.errors).forEach(errBox => errBox.close()))
-
         // Stylesheet with Theme Adaptation
         this.styleSheet = require("./stylesheet")(this.isDarkTheme);
         this.appWindow.setStyleSheet(this.styleSheet);
@@ -1024,6 +1022,11 @@ class GUIApp {
         this.app.infoPostEmitter.on("event", (m) => {
             this.executeLabel.setVisible(true);
             this.executeLabel.setText(m);
+        });
+
+        this.appWindow.addEventListener(WidgetEventTypes.Close, () => {
+            Object.values(widgets.errors).forEach(errBox => errBox.close());
+            this.app.killProcesses();
         });
 
         this.appWindow.show();
