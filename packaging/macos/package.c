@@ -17,6 +17,19 @@ int main(int argc, char *argv[]) {
     // Get the directory containing the binary
     char *binary_dir = dirname(exe_path);
 
+    // Check if the binary is inside an .app bundle
+    char *app_bundle_check = strstr(binary_dir, ".app/Contents/MacOS");
+    if (app_bundle_check != NULL) {
+        // If inside an .app bundle, change the directory to ../Resources
+        char resources_path[1024];
+        snprintf(resources_path, sizeof(resources_path), "%s/../Resources", binary_dir);
+        if (chdir(resources_path) != 0) {
+            perror("Failed to change directory to ../Resources");
+            return 1;
+        }
+        binary_dir = resources_path;
+    }
+
     // QT library path
     char qt_path[1024];
     snprintf(qt_path, sizeof(qt_path), "%s/node_modules/@nodegui/nodegui/miniqt/6.6.0/macos/lib", binary_dir);
