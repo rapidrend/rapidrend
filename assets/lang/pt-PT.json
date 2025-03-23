@@ -202,12 +202,12 @@
       "name": "Misturar",
       "description": "Combina dois ficheiros com um modo de mistura.",
       "args": {
-        "input1": {
+        "baseFile": {
           "name": "Ficheiro Base",
           "desc": "O ficheiro base."
         },
-        "input2": {
-          "name": "Ficheiro Secundário",
+        "blendFile": {
+          "name": "Ficheiro de Mistura",
           "desc": "O ficheiro para misturar."
         },
         "mode": {
@@ -217,34 +217,34 @@
       }
     },
     "overlay": {
-      "name": "Sobreposição",
-      "description": "Sobrepoe um ficheiro a outro com controlo preciso.",
+      "name": "Sobrepor",
+      "description": "Sobrepõe um ficheiro em outro com controlos precisos.",
       "args": {
         "baseFile": {
           "name": "Ficheiro Base",
           "desc": "Ficheiro base para sobreposição."
         },
         "overlayFile": {
-          "name": "Ficheiro Sobreposto",
+          "name": "Ficheiro de Sobreposição",
           "desc": "Ficheiro a sobrepor."
         },
         "origin": {
           "name": "Posição de Origem",
           "desc": "Ponto de ancoragem da sobreposição."
         },
-        "offsetX": {
+        "x": {
           "name": "Deslocamento X",
           "desc": "Deslocamento horizontal."
         },
-        "offsetY": {
+        "y": {
           "name": "Deslocamento Y",
           "desc": "Deslocamento vertical."
         },
-        "width": {
+        "w": {
           "name": "Largura",
           "desc": "Largura da sobreposição."
         },
-        "height": {
+        "h": {
           "name": "Altura",
           "desc": "Altura da sobreposição."
         },
@@ -314,7 +314,7 @@
   },
   "categories": {
     "animation": "Animação",
-    "color": "Cor",
+    "color": "Coloração",
     "duration": "Duração",
     "resizing": "Redimensionamento",
     "overlaying": "Sobreposição"

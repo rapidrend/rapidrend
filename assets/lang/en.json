@@ -202,11 +202,11 @@
       "name": "Blend",
       "description": "Combines two files using a blend mode.",
       "args": {
-        "input1": {
+        "baseFile": {
           "name": "Base File",
           "desc": "The base file."
         },
-        "input2": {
+        "blendFile": {
           "name": "Blend File",
           "desc": "The file to blend."
         },
@@ -232,19 +232,19 @@
           "name": "Origin Position",
           "desc": "Anchor point for overlay."
         },
-        "offsetX": {
+        "x": {
           "name": "X Offset",
           "desc": "Horizontal offset."
         },
-        "offsetY": {
+        "y": {
           "name": "Y Offset",
           "desc": "Vertical offset."
         },
-        "width": {
+        "w": {
           "name": "Width",
           "desc": "Overlay width."
         },
-        "height": {
+        "h": {
           "name": "Height",
           "desc": "Overlay height."
         },
@@ -318,7 +318,7 @@
   },
   "categories": {
     "animation": "Animation",
-    "color": "Color",
+    "color": "Coloring",
     "duration": "Duration",
     "resizing": "Resizing",
     "overlaying": "Overlaying"
