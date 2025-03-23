@@ -1,6 +1,7 @@
 const path = require("path");
 
 global.appPath = path.normalize(path.join(__dirname, ".."));
+if (process.cwd() != appPath) process.chdir(appPath);
 
 const App = require("#main");
 
