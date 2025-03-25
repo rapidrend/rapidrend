@@ -1,5 +1,23 @@
 {
   "commands": {
+    "spin": {
+      "name": "Spin",
+      "description": "Continuously spins the input file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the spin animation in seconds (0.1s-10s)."
+        },
+        "size": {
+          "name": "Size",
+          "desc": "Maximum width/height of the output in pixels (10px-1000px)."
+        }
+      }
+    },
     "blob": {
       "name": "Blob",
       "description": "Makes the file squishy like a blob.",
@@ -54,6 +72,140 @@
         }
       }
     },
+    "infinity": {
+      "name": "Infinity",
+      "description": "Makes the file move in an infinity symbol motion.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Width of the animation area."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Height of the animation area."
+        },
+        "fileWidth": {
+          "name": "File Width",
+          "desc": "Width of the file in the animation."
+        },
+        "fileHeight": {
+          "name": "File Height",
+          "desc": "Height of the file in the animation."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the animation (0.05s-10s)."
+        }
+      }
+    },
+    "transition": {
+      "name": "Transition",
+      "description": "Creates a transition between two media files.",
+      "args": {
+        "file1": {
+          "name": "First File",
+          "desc": "The first media file to transition from."
+        },
+        "file2": {
+          "name": "Second File",
+          "desc": "The second media file to transition to."
+        },
+        "transition": {
+          "name": "Transition",
+          "desc": "The type of transition to apply (default: fade)."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the transition in seconds (max 10)."
+        },
+        "waitUntilEnd": {
+          "name": "Wait Until End?",
+          "desc": "Whether to wait until the end of the first file before transitioning."
+        }
+      }
+    },
+    "tween": {
+      "name": "Tween",
+      "description": "Creates an animation with tweening effects on a file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "w": {
+          "name": "Width",
+          "desc": "Width of the output canvas in pixels."
+        },
+        "h": {
+          "name": "Height",
+          "desc": "Height of the output canvas in pixels."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Animation duration in seconds."
+        },
+        "startSizeX": {
+          "name": "Start Width",
+          "desc": "Starting width of the element."
+        },
+        "startSizeY": {
+          "name": "Start Height",
+          "desc": "Starting height of the element."
+        },
+        "endSizeX": {
+          "name": "End Width",
+          "desc": "Ending width of the element."
+        },
+        "endSizeY": {
+          "name": "End Height",
+          "desc": "Ending height of the element."
+        },
+        "originX": {
+          "name": "Origin X",
+          "desc": "Horizontal origin point (left/center/right)."
+        },
+        "originY": {
+          "name": "Origin Y",
+          "desc": "Vertical origin point (top/middle/bottom)."
+        },
+        "startOffsetX": {
+          "name": "Start X Offset",
+          "desc": "Starting horizontal offset from origin."
+        },
+        "startOffsetY": {
+          "name": "Start Y Offset",
+          "desc": "Starting vertical offset from origin."
+        },
+        "endOffsetX": {
+          "name": "End X Offset",
+          "desc": "Ending horizontal offset from origin."
+        },
+        "endOffsetY": {
+          "name": "End Y Offset",
+          "desc": "Ending vertical offset from origin."
+        },
+        "startAngle": {
+          "name": "Start Angle",
+          "desc": "Starting rotation angle in degrees."
+        },
+        "endAngle": {
+          "name": "End Angle",
+          "desc": "Ending rotation angle in degrees."
+        },
+        "fitAngle": {
+          "name": "Fit Angle",
+          "desc": "Adjust canvas to fit rotated content."
+        },
+        "easing": {
+          "name": "Easing",
+          "desc": "Animation easing style (e.g., linear, easeinoutback)."
+        }
+      }
+    },
     "color": {
       "name": "Color",
       "description": "Applies a color tint to the file.",
@@ -73,20 +225,6 @@
         "b": {
           "name": "Blue",
           "desc": "Blue component (0-255)."
-        }
-      }
-    },
-    "rainbow": {
-      "name": "Rainbow",
-      "description": "Applies a rainbow effect to the file.",
-      "args": {
-        "input": {
-          "name": "Input File",
-          "desc": "The input file."
-        },
-        "duration": {
-          "name": "Duration",
-          "desc": "Duration of the effect (max 10s)."
         }
       }
     },
@@ -113,6 +251,34 @@
         "a": {
           "name": "Alpha",
           "desc": "Transparency component (0-255)."
+        }
+      }
+    },
+    "rainbow": {
+      "name": "Rainbow",
+      "description": "Applies a rainbow effect to the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the effect (max 10s)."
+        }
+      }
+    },
+    "pseudocolor": {
+      "name": "Pseudocolor",
+      "description": "Applies a pseudocolor effect to the input file using the specified color preset.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "preset": {
+          "name": "Preset",
+          "desc": "The color preset to use."
         }
       }
     },
@@ -144,6 +310,38 @@
         }
       }
     },
+    "trim": {
+      "name": "Trim",
+      "description": "Trims a file between specified timestamps.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "start": {
+          "name": "Start Time",
+          "desc": "The starting timestamp (hh:mm:ss or seconds)."
+        },
+        "end": {
+          "name": "End Time",
+          "desc": "The ending timestamp (hh:mm:ss or seconds)."
+        }
+      }
+    },
+    "loop": {
+      "name": "Loop",
+      "description": "Loops the input file a specified number of times.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "times": {
+          "name": "Times",
+          "desc": "Number of times to loop (2-100, default: 2)"
+        }
+      }
+    },
     "crop": {
       "name": "Crop",
       "description": "Crops the file according to specified dimensions.",
@@ -167,6 +365,48 @@
         "h": {
           "name": "Height",
           "desc": "Height of the cropped area."
+        }
+      }
+    },
+    "perspective": {
+      "name": "Perspective",
+      "description": "Changes the perspective of a file by specifying new corner positions.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "tlX": {
+          "name": "Top-left X",
+          "desc": "X coordinate for top-left corner (pixels or %)"
+        },
+        "tlY": {
+          "name": "Top-left Y",
+          "desc": "Y coordinate for top-left corner (pixels or %)"
+        },
+        "trX": {
+          "name": "Top-right X",
+          "desc": "X coordinate for top-right corner (pixels or %)"
+        },
+        "trY": {
+          "name": "Top-right Y",
+          "desc": "Y coordinate for top-right corner (pixels or %)"
+        },
+        "blX": {
+          "name": "Bottom-left X",
+          "desc": "X coordinate for bottom-left corner (pixels or %)"
+        },
+        "blY": {
+          "name": "Bottom-left Y",
+          "desc": "Y coordinate for bottom-left corner (pixels or %)"
+        },
+        "brX": {
+          "name": "Bottom-right X",
+          "desc": "X coordinate for bottom-right corner (pixels or %)"
+        },
+        "brY": {
+          "name": "Bottom-right Y",
+          "desc": "Y coordinate for bottom-right corner (pixels or %)"
         }
       }
     },
@@ -202,11 +442,11 @@
       "name": "Blend",
       "description": "Combines two files using a blend mode.",
       "args": {
-        "baseFile": {
+        "base": {
           "name": "Base File",
           "desc": "The base file."
         },
-        "blendFile": {
+        "blend": {
           "name": "Blend File",
           "desc": "The file to blend."
         },
@@ -218,47 +458,215 @@
     },
     "overlay": {
       "name": "Overlay",
-      "description": "Overlays one file onto another with precise controls.",
+      "description": "Overlays one file on top of another.",
       "args": {
-        "baseFile": {
+        "base": {
           "name": "Base File",
-          "desc": "Base file for overlay."
+          "desc": "The base media file that will have another file overlaid on it."
         },
-        "overlayFile": {
+        "overlay": {
           "name": "Overlay File",
-          "desc": "File to overlay."
+          "desc": "The file that will be overlaid on top of the base file."
         },
-        "origin": {
-          "name": "Origin Position",
-          "desc": "Anchor point for overlay."
+        "originX": {
+          "name": "Horizontal Origin",
+          "desc": "The horizontal anchor point for the overlay (left/center/right)."
+        },
+        "originY": {
+          "name": "Vertical origin",
+          "desc": "The vertical anchor point for the overlay (top/middle/bottom)."
         },
         "x": {
           "name": "X Offset",
-          "desc": "Horizontal offset."
+          "desc": "Number of pixels to offset the overlay horizontally from the origin."
         },
         "y": {
           "name": "Y Offset",
-          "desc": "Vertical offset."
+          "desc": "Number of pixels to offset the overlay vertically from the origin."
         },
         "w": {
           "name": "Width",
-          "desc": "Overlay width."
+          "desc": "Width of the overlay in pixels or percentage (e.g. 100 or 50%)."
         },
         "h": {
           "name": "Height",
-          "desc": "Overlay height."
+          "desc": "Height of the overlay in pixels or percentage (e.g. 100 or 50%)."
         },
-        "keepAspect": {
+        "keepAspectRatio": {
           "name": "Keep Aspect Ratio",
-          "desc": "Maintain original aspect ratio."
+          "desc": "Whether to maintain the original aspect ratio (increase/decrease)."
         },
-        "startTime": {
+        "start": {
           "name": "Start Time",
-          "desc": "Start time (hh:mm:ss)."
+          "desc": "When to start showing the overlay (timestamp in hh:mm:ss format)."
         },
-        "endTime": {
+        "end": {
           "name": "End Time",
-          "desc": "End time (hh:mm:ss)."
+          "desc": "When to stop showing the overlay (timestamp in hh:mm:ss format)."
+        }
+      }
+    },
+    "mask": {
+      "name": "Mask",
+      "description": "Applies a mask to a file.",
+      "args": {
+        "base": {
+          "name": "Base File",
+          "desc": "The base file to apply the mask to."
+        },
+        "mask": {
+          "name": "Mask File",
+          "desc": "The file to use as the mask."
+        },
+        "keep": {
+          "name": "Keep Mode",
+          "desc": "Whether to keep white areas instead of black areas (inverts mask)."
+        },
+        "originX": {
+          "name": "X Origin",
+          "desc": "Horizontal position for mask placement (left/center/right)."
+        },
+        "originY": {
+          "name": "Y Origin",
+          "desc": "Vertical position for mask placement (top/middle/bottom)."
+        },
+        "x": {
+          "name": "X Offset",
+          "desc": "Horizontal offset from origin position in pixels."
+        },
+        "y": {
+          "name": "Y Offset",
+          "desc": "Vertical offset from origin position in pixels."
+        },
+        "w": {
+          "name": "Width",
+          "desc": "Width to resize the mask to (pixels or percentage)."
+        },
+        "h": {
+          "name": "Height",
+          "desc": "Height to resize the mask to (pixels or percentage)."
+        },
+        "keepAspectRatio": {
+          "name": "Keep Aspect Ratio",
+          "desc": "How to handle aspect ratio when resizing (increase/decrease)."
+        }
+      }
+    },
+    "stack": {
+      "name": "Stack",
+      "description": "Stacks a file multiple times horizontally or vertically.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "count": {
+          "name": "Count",
+          "desc": "Number of additional copies to stack (1-100)."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "Stacking direction (horizontal/vertical)."
+        }
+      }
+    },
+    "merge": {
+      "name": "Merge",
+      "description": "Merges two files together either vertically or horizontally.",
+      "args": {
+        "file1": {
+          "name": "First File",
+          "desc": "The first file to merge."
+        },
+        "file2": {
+          "name": "Second File",
+          "desc": "The second file to merge."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "The merge direction (vertical/horizontal)."
+        },
+        "swap": {
+          "name": "Swap?",
+          "desc": "Swap the order of the files."
+        }
+      }
+    },
+    "blur": {
+      "name": "Blur",
+      "description": "Applies a blur effect to the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "radius": {
+          "name": "Radius",
+          "desc": "Blur radius intensity (0-100)."
+        },
+        "power": {
+          "name": "Power",
+          "desc": "Blur strength multiplier (0-100)."
+        }
+      }
+    },
+    "pixelate": {
+      "name": "Pixelate",
+      "description": "Pixelate a file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "size": {
+          "name": "Size",
+          "desc": "Pixel block size (1-100)."
+        }
+      }
+    },
+    "melt": {
+      "name": "Melt",
+      "description": "Creates a trippy melting effect.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "decay": {
+          "name": "Decay",
+          "desc": "Melt intensity (0-100%)."
+        },
+        "loop": {
+          "name": "Loop",
+          "desc": "Enable infinite looping."
+        }
+      }
+    },
+    "rotate": {
+      "name": "Rotate",
+      "description": "Rotates the file by a certain angle.",
+      "args": {
+        "degrees": {
+          "name": "Degrees",
+          "desc": "Rotation angle (-360 to 360)."
+        },
+        "input": {
+          "name": "File",
+          "desc": "The media file to rotate."
+        },
+        "cut": {
+          "name": "Cut",
+          "desc": "Crop to original dimensions."
+        }
+      }
+    },
+    "alphaextract": {
+      "name": "Alpha Extract",
+      "description": "Extracts the alpha channel (transparency mask) from an image.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
         }
       }
     }
@@ -321,6 +729,7 @@
     "color": "Coloring",
     "duration": "Duration",
     "resizing": "Resizing",
+    "effects": "Effects",
     "overlaying": "Overlaying"
   }
 }

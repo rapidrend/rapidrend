@@ -1,7 +1,7 @@
 {
     "name": "rapidrend",
     "description": "An all-purpose application for media manipulation.",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "main": "src/index.js",
     "author": "rapidrend",
     "license": "GPL-3.0-only",

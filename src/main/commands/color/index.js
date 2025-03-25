@@ -1,5 +1,6 @@
 module.exports = {
     color: require("./color"),
+    tint: require("./tint"),
     rainbow: require("./rainbow"),
-    tint: require("./tint")
+    pseudocolor: require("./pseudocolor")
 };

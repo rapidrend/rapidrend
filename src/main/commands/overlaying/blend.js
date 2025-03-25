@@ -9,9 +9,9 @@ module.exports = {
     description: translate("commands.blend.description"),
     category: translate("categories.overlaying"),
     args: {
-        baseFile: {
-            name: translate("commands.blend.args.baseFile.name"),
-            desc: translate("commands.blend.args.baseFile.desc"),
+        base: {
+            name: translate("commands.blend.args.base.name"),
+            desc: translate("commands.blend.args.base.desc"),
             type: "file",
             required: true,
             settings: {
@@ -21,9 +21,9 @@ module.exports = {
                 }
             }
         },
-        blendFile: {
-            name: translate("commands.blend.args.blendFile.name"),
-            desc: translate("commands.blend.args.blendFile.desc"),
+        blend: {
+            name: translate("commands.blend.args.blend.name"),
+            desc: translate("commands.blend.args.blend.desc"),
             type: "file",
             required: true,
             settings: {
@@ -54,8 +54,8 @@ module.exports = {
     },
     globalArgs: ["encodingPreset"],
     execute: async function (args) {
-        const baseFile = args.baseFile;
-        const blendFile = args.blendFile;
+        const baseFile = args.base;
+        const blendFile = args.blend;
         const mode = args.mode;
 
         const { path: basePath, shortType: baseType } = baseFile;

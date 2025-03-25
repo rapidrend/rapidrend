@@ -75,7 +75,7 @@ const functions = {
                 fps: "0/0",
                 pixFmt: "unk",
 
-                videoDuration: "N/A",
+                duration: "N/A",
                 audioDuration: "N/A",
 
                 audio: false
@@ -167,17 +167,17 @@ const functions = {
                         const audioStream = jsoninfo["streams"].find(stream => stream["codec_type"] === "audio")
 
                         if ((type.mime.startsWith("image") && gifFormats.find(f => f === type.ext)) || type.mime.startsWith("video")) {
-                            info.frames = videoStream["nb_frames"] || 0
+                            info.frames = Number(videoStream["nb_frames"] || 0)
                             info.fps = videoStream["r_frame_rate"] || "0/0"
                         }
                         if (type.mime.startsWith("video") || type.mime.startsWith("audio")) {
                             info.audio = !!audioStream
                         }
                         if ((type.mime.startsWith("image") && gifFormats.find(f => f === type.ext)) || type.mime.startsWith("video") || type.mime.startsWith("audio")) {
-                            info.videoDuration = (videoStream || audioStream)["duration"] || 0
+                            info.duration = Number((videoStream || audioStream)["duration"] || 0)
                         }
                         if ((type.mime.startsWith("video") || type.mime.startsWith("audio")) && info.audio) {
-                            info.audioDuration = audioStream["duration"] || 0
+                            info.audioDuration = Number(audioStream["duration"] || 0)
                         }
                         if (type.mime.startsWith("image") || type.mime.startsWith("video")) {
                             info.width = videoStream["width"] || 0

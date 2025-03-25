@@ -30,7 +30,7 @@ module.exports = {
             settings: {
                 dft: 0,
                 min: 0,
-                max: (argJSON) => argJSON.input && argJSON.input.width - 1
+                max: (args) => args.input && args.input.width - 1
             }
         },
         y: {
@@ -41,7 +41,7 @@ module.exports = {
             settings: {
                 dft: 0,
                 min: 0,
-                max: (argJSON) => argJSON.input && argJSON.input.height - 1
+                max: (args) => args.input && args.input.height - 1
             }
         },
         w: {
@@ -50,9 +50,9 @@ module.exports = {
             type: "pixels",
             required: false,
             settings: {
-                dft: (argJSON) => argJSON.input?.width,
+                dft: (args) => args.input?.width,
                 min: 1,
-                max: (argJSON) => argJSON.input?.width
+                max: (args) => args.input?.width
             }
         },
         h: {
@@ -61,9 +61,9 @@ module.exports = {
             type: "pixels",
             required: false,
             settings: {
-                dft: (argJSON) => argJSON.input?.height,
+                dft: (args) => args.input?.height,
                 min: 1,
-                max: (argJSON) => argJSON.input?.height
+                max: (args) => args.input?.height
             }
         }
     },

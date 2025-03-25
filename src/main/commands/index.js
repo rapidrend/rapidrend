@@ -1,8 +1,9 @@
 let commandGroups = {
-    animation: require("./animation"),
     duration: require("./duration"),
     resizing: require("./resizing"),
+    effects: require("./effects"),
     overlaying: require("./overlaying"),
+    animation: require("./animation"),
     color: require("./color")
 };
 

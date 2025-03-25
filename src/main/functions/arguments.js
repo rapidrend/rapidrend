@@ -49,14 +49,14 @@ const functions = {
     },
 
     parsePixels(val, {
-        dft = undefined, min = -Infinity, max = Infinity
+        dft = undefined, min = -Infinity, max = Infinity, base = undefined
     } = {}) {
         if (val == undefined) val = dft ?? 0;
         if (typeof val != "string") val = String(val);
 
         if (val.endsWith("%")) {
             const percentage = Number(val.slice(0, -1)) * 0.01;
-            val = percentage * max;
+            val = percentage * (base ?? max);
         }
 
         return functions.parseNumber(val, { dft, min, max, round: true });
@@ -68,7 +68,7 @@ const functions = {
         if (val == undefined) val = dft ?? 0;
         if (typeof val != "string") val = String(val);
 
-        const total = 0;
+        let total = 0;
         val = val.split(':').reverse();
         val.splice(3);
 

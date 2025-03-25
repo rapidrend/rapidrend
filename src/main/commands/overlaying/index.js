@@ -1,4 +1,7 @@
 module.exports = {
-    blend: require("./overlay"),
-    overlay: require("./blend")
+    overlay: require("./overlay"),
+    blend: require("./blend"),
+    mask: require("./mask"),
+    stack: require("./stack"),
+    merge: require("./merge")
 };

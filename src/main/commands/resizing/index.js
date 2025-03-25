@@ -1,5 +1,6 @@
 module.exports = {
     enlarge: require("./enlarge"),
     shrink: require("./shrink"),
-    crop: require("./crop")
+    crop: require("./crop"),
+    perspective: require("./perspective")
 };

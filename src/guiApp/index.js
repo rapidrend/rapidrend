@@ -43,17 +43,19 @@ class GUIApp {
     constructor(app) {
         const appPalette = QApplication.instance().palette();
         const windowTextColor = appPalette.color(ColorGroup.Active, ColorRole.WindowText);
+        const primaryScreen = QApplication.primaryScreen();
+        const screenSize = primaryScreen.size();
 
         this.app = app;
 
-        this.minSize = new QSize(800, 600);
         this.isDarkTheme = windowTextColor.red() > 128 && windowTextColor.green() > 128 && windowTextColor.blue() > 128;
         this.executing = false;
 
         this.appWindow = new QMainWindow();
         this.appWindow.setWindowIcon(new QIcon(path.join(appPath, "assets", "gui", "app.svg")));
         this.appWindow.setWindowTitle("RapidRend");
-        this.appWindow.resize(this.minSize.width(), this.minSize.height());
+        this.appWindow.setMaximumSize(screenSize.width(), screenSize.height());
+        this.appWindow.resize(800, 600);
 
         // Stylesheet with Theme Adaptation
         this.styleSheet = require("./stylesheet")(this.isDarkTheme);
@@ -292,6 +294,7 @@ class GUIApp {
         errBox.setLayout(errLayout);
 
         errBox.show();
+        console.log(text);
 
         widgets.errors[errorID] = errBox;
         errBox.addEventListener(WidgetEventTypes.Close, () => delete widgets.errors[errorID]);
@@ -323,6 +326,7 @@ class GUIApp {
         const outputName = new QLabel();
         outputName.setProperty("class", "title");
         outputName.setText(translate("ui.commandOutput"));
+        outputName.setSizePolicy(QSizePolicyPolicy.Expanding, QSizePolicyPolicy.Fixed);
         outputName.setAlignment(AlignmentFlag.AlignCenter);
 
         outputLayout.addWidget(outputName);
@@ -556,6 +560,7 @@ class GUIApp {
         let inputField;
         switch (arg.type) {
             case "boolean": {
+                fieldContainer.setMinimumWidth(50);
                 inputField = new QCheckBox();
                 inputField.setSizePolicy(QSizePolicyPolicy.Expanding, QSizePolicyPolicy.Expanding);
                 inputField.setToolTip(arg.desc);
@@ -1020,6 +1025,7 @@ class GUIApp {
         });
 
         this.app.infoPostEmitter.on("event", (m) => {
+            if (m.length > 200) m = `${m.slice(0, -3)}...`;
             this.executeLabel.setVisible(true);
             this.executeLabel.setText(m);
         });

@@ -1,5 +1,23 @@
 {
   "commands": {
+    "spin": {
+      "name": "Girar",
+      "description": "Faz girar continuamente o ficheiro de entrada.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação em segundos (0.1s-10s)."
+        },
+        "size": {
+          "name": "Tamanho",
+          "desc": "Largura/altura máxima da saída em píxeis (10px-1000px)."
+        }
+      }
+    },
     "blob": {
       "name": "Bolha",
       "description": "Torna o ficheiro flexível como uma bolha.",
@@ -54,6 +72,140 @@
         }
       }
     },
+    "infinity": {
+      "name": "Infinito",
+      "description": "Faz o ficheiro mover-se em um símbolo infinito.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura da área de animação."
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura da área de animação."
+        },
+        "fileWidth": {
+          "name": "Largura do Ficheiro",
+          "desc": "Largura do ficheiro na animação."
+        },
+        "fileHeight": {
+          "name": "Altura do Ficheiro",
+          "desc": "Altura do ficheiro na animação."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação (0.05s-10s)."
+        }
+      }
+    },
+    "transition": {
+      "name": "Transição",
+      "description": "Cria uma transição entre dois ficheiros multimédia.",
+      "args": {
+        "file1": {
+          "name": "Primeiro Ficheiro",
+          "desc": "O primeiro ficheiro multimédia para transição."
+        },
+        "file2": {
+          "name": "Segundo Ficheiro",
+          "desc": "O segundo ficheiro multimédia para transição."
+        },
+        "transition": {
+          "name": "Transição",
+          "desc": "O tipo de transição a aplicar (padrão: fade)."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da transição em segundos (máx. 10)."
+        },
+        "waitUntilEnd": {
+          "name": "Esperar até ao fim?",
+          "desc": "Esperar até ao fim do primeiro ficheiro antes da transição."
+        }
+      }
+    },
+    "tween": {
+      "name": "Interpolar",
+      "description": "Cria uma animação com efeitos de interpolação num ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "w": {
+          "name": "Largura",
+          "desc": "Largura do canvas de saída em pixels."
+        },
+        "h": {
+          "name": "Altura",
+          "desc": "Altura do canvas de saída em pixels."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação em segundos (máx 10)."
+        },
+        "startSizeX": {
+          "name": "Largura Inicial",
+          "desc": "Largura inicial do elemento."
+        },
+        "startSizeY": {
+          "name": "Altura Inicial",
+          "desc": "Altura inicial do elemento."
+        },
+        "endSizeX": {
+          "name": "Largura Final",
+          "desc": "Largura final do elemento."
+        },
+        "endSizeY": {
+          "name": "Altura Final",
+          "desc": "Altura final do elemento."
+        },
+        "originX": {
+          "name": "Origem X",
+          "desc": "Ponto de origem horizontal (esquerda/centro/direita)."
+        },
+        "originY": {
+          "name": "Origem Y",
+          "desc": "Ponto de origem vertical (topo/meio/baixo)."
+        },
+        "startOffsetX": {
+          "name": "Deslocamento X Inicial",
+          "desc": "Deslocamento horizontal inicial a partir da origem."
+        },
+        "startOffsetY": {
+          "name": "Deslocamento Y Inicial",
+          "desc": "Deslocamento vertical inicial a partir da origem."
+        },
+        "endOffsetX": {
+          "name": "Deslocamento X Final",
+          "desc": "Deslocamento horizontal final a partir da origem."
+        },
+        "endOffsetY": {
+          "name": "Deslocamento Y Final",
+          "desc": "Deslocamento vertical final a partir da origem."
+        },
+        "startAngle": {
+          "name": "Ângulo Inicial",
+          "desc": "Ângulo de rotação inicial em graus."
+        },
+        "endAngle": {
+          "name": "Ângulo Final",
+          "desc": "Ângulo de rotação final em graus."
+        },
+        "fitAngle": {
+          "name": "Ajustar Ângulo",
+          "desc": "Ajustar o canvas para conter o conteúdo rodado."
+        },
+        "easing": {
+          "name": "Suavização",
+          "desc": "Estilo de suavização da animação (ex: linear, easeinoutback)."
+        }
+      }
+    },
     "color": {
       "name": "Cor",
       "description": "Aplica uma tonalidade de cor ao ficheiro.",
@@ -73,20 +225,6 @@
         "b": {
           "name": "Azul",
           "desc": "Componente azul (0-255)."
-        }
-      }
-    },
-    "rainbow": {
-      "name": "Arco-Íris",
-      "description": "Aplica um efeito de arco-íris ao ficheiro.",
-      "args": {
-        "input": {
-          "name": "Ficheiro de Entrada",
-          "desc": "O ficheiro de entrada."
-        },
-        "duration": {
-          "name": "Duração",
-          "desc": "Duração do efeito (máx. 10s)."
         }
       }
     },
@@ -113,6 +251,34 @@
         "a": {
           "name": "Transparência",
           "desc": "Componente de transparência (0-255)."
+        }
+      }
+    },
+    "rainbow": {
+      "name": "Arco-Íris",
+      "description": "Aplica um efeito de arco-íris ao ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração do efeito (máx. 10s)."
+        }
+      }
+    },
+    "pseudocolor": {
+      "name": "Pseudocor",
+      "description": "Aplica um efeito de pseudocor ao ficheiro de entrada usando o predefinição de cor especificada.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "preset": {
+          "name": "Predefinição",
+          "desc": "A predefinição de cor a usar."
         }
       }
     },
@@ -144,6 +310,38 @@
         }
       }
     },
+    "trim": {
+      "name": "Cortar",
+      "description": "Corta um ficheiro entre os tempos especificados.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "start": {
+          "name": "Tempo Inicial",
+          "desc": "O tempo de início (hh:mm:ss ou segundos)."
+        },
+        "end": {
+          "name": "Tempo Final",
+          "desc": "O tempo de fim (hh:mm:ss ou segundos)."
+        }
+      }
+    },
+    "loop": {
+      "name": "Loop",
+      "description": "Repete o ficheiro de entrada um número especificado de vezes.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "times": {
+          "name": "Vezes",
+          "desc": "Número de vezes a repetir (2-100, padrão: 2)"
+        }
+      }
+    },
     "crop": {
       "name": "Recortar",
       "description": "Recorta o ficheiro conforme dimensões especificadas.",
@@ -167,6 +365,48 @@
         "h": {
           "name": "Altura",
           "desc": "Altura da área recortada."
+        }
+      }
+    },
+    "perspective": {
+      "name": "Perspetiva",
+      "description": "Altera a perspetiva de um ficheiro especificando novas posições para os cantos.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "tlX": {
+          "name": "Canto superior esquerdo X",
+          "desc": "Coordenada X para o canto superior esquerdo (píxeis ou %)"
+        },
+        "tlY": {
+          "name": "Canto superior esquerdo Y",
+          "desc": "Coordenada Y para o canto superior esquerdo (píxeis ou %)"
+        },
+        "trX": {
+          "name": "Canto superior direito X",
+          "desc": "Coordenada X para o canto superior direito (píxeis ou %)"
+        },
+        "trY": {
+          "name": "Canto superior direito Y",
+          "desc": "Coordenada Y para o canto superior direito (píxeis ou %)"
+        },
+        "blX": {
+          "name": "Canto inferior esquerdo X",
+          "desc": "Coordenada X para o canto inferior esquerdo (píxeis ou %)"
+        },
+        "blY": {
+          "name": "Canto inferior esquerdo Y",
+          "desc": "Coordenada Y para o canto inferior esquerdo (píxeis ou %)"
+        },
+        "brX": {
+          "name": "Canto inferior direito X",
+          "desc": "Coordenada X para o canto inferior direito (píxeis ou %)"
+        },
+        "brY": {
+          "name": "Canto inferior direito Y",
+          "desc": "Coordenada Y para o canto inferior direito (píxeis ou %)"
         }
       }
     },
@@ -202,11 +442,11 @@
       "name": "Misturar",
       "description": "Combina dois ficheiros com um modo de mistura.",
       "args": {
-        "baseFile": {
+        "base": {
           "name": "Ficheiro Base",
           "desc": "O ficheiro base."
         },
-        "blendFile": {
+        "blend": {
           "name": "Ficheiro de Mistura",
           "desc": "O ficheiro para misturar."
         },
@@ -218,47 +458,215 @@
     },
     "overlay": {
       "name": "Sobrepor",
-      "description": "Sobrepõe um ficheiro em outro com controlos precisos.",
+      "description": "Sobrepor um ficheiro em cima de outro.",
       "args": {
-        "baseFile": {
+        "base": {
           "name": "Ficheiro Base",
-          "desc": "Ficheiro base para sobreposição."
+          "desc": "O ficheiro base que terá outro ficheiro sobreposto."
         },
-        "overlayFile": {
-          "name": "Ficheiro de Sobreposição",
-          "desc": "Ficheiro a sobrepor."
+        "overlay": {
+          "name": "Ficheiro Sobreposto",
+          "desc": "O ficheiro que será sobreposto em cima do ficheiro base."
         },
-        "origin": {
-          "name": "Posição de Origem",
-          "desc": "Ponto de ancoragem da sobreposição."
+        "originX": {
+          "name": "Origem Horizontal",
+          "desc": "O ponto de ancoragem horizontal para a sobreposição (esquerda/centro/direita)."
+        },
+        "originY": {
+          "name": "Origem Vertical",
+          "desc": "O ponto de ancoragem vertical para a sobreposição (topo/meio/baixo)."
         },
         "x": {
           "name": "Deslocamento X",
-          "desc": "Deslocamento horizontal."
+          "desc": "Número de pixels para deslocar a sobreposição horizontalmente a partir da origem."
         },
         "y": {
           "name": "Deslocamento Y",
-          "desc": "Deslocamento vertical."
+          "desc": "Número de pixels para deslocar a sobreposição verticalmente a partir da origem."
         },
         "w": {
           "name": "Largura",
-          "desc": "Largura da sobreposição."
+          "desc": "Largura da sobreposição em pixels ou percentagem (ex: 100 ou 50%)."
         },
         "h": {
           "name": "Altura",
-          "desc": "Altura da sobreposição."
+          "desc": "Altura da sobreposição em pixels ou percentagem (ex: 100 ou 50%)."
         },
-        "keepAspect": {
+        "keepAspectRatio": {
           "name": "Manter Proporção",
-          "desc": "Manter proporção original."
+          "desc": "Se deve manter a proporção original (aumentar/diminuir)."
         },
-        "startTime": {
+        "start": {
           "name": "Tempo Inicial",
-          "desc": "Hora de início (hh:mm:ss)."
+          "desc": "Quando começar a mostrar a sobreposição (formato hh:mm:ss)."
         },
-        "endTime": {
+        "end": {
           "name": "Tempo Final",
-          "desc": "Hora de fim (hh:mm:ss)."
+          "desc": "Quando parar de mostrar a sobreposição (formato hh:mm:ss)."
+        }
+      }
+    },
+    "mask": {
+      "name": "Mascarar",
+      "description": "Aplica uma máscara a um ficheiro.",
+      "args": {
+        "base": {
+          "name": "Ficheiro Base",
+          "desc": "O ficheiro base para aplicar a máscara"
+        },
+        "mask": {
+          "name": "Ficheiro de Máscara",
+          "desc": "O ficheiro a usar como máscara"
+        },
+        "keep": {
+          "name": "Modo Manter",
+          "desc": "Se deve manter áreas brancas em vez de pretas (inverte a máscara)."
+        },
+        "originX": {
+          "name": "Origem X",
+          "desc": "Posição horizontal para colocação da máscara (esquerda/centro/direita)."
+        },
+        "originY": {
+          "name": "Origem Y",
+          "desc": "Posição vertical para colocação da máscara (topo/meio/baixo)."
+        },
+        "x": {
+          "name": "Deslocamento X",
+          "desc": "Deslocamento horizontal da posição de origem em píxeis."
+        },
+        "y": {
+          "name": "Deslocamento Y",
+          "desc": "Deslocamento vertical da posição de origem em píxeis."
+        },
+        "w": {
+          "name": "Largura",
+          "desc": "Largura para redimensionar a máscara (píxeis ou percentagem)."
+        },
+        "h": {
+          "name": "Altura",
+          "desc": "Altura para redimensionar a máscara (píxeis ou percentagem)."
+        },
+        "keepAspectRatio": {
+          "name": "Manter Proporção",
+          "desc": "Como lidar com a proporção ao redimensionar (aumentar/diminuir)."
+        }
+      }
+    },
+    "stack": {
+      "name": "Empilhar",
+      "description": "Empilha um ficheiro várias vezes na horizontal ou vertical.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "count": {
+          "name": "Contagem",
+          "desc": "Número de cópias adicionais para empilhar (1-100)."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "Direção de empilhamento (horizontal/vertical)."
+        }
+      }
+    },
+    "merge": {
+      "name": "Combinar",
+      "description": "Combina dois ficheiros verticalmente ou horizontalmente.",
+      "args": {
+        "file1": {
+          "name": "Primeiro Ficheiro",
+          "desc": "O primeiro ficheiro a combinar."
+        },
+        "file2": {
+          "name": "Segundo Ficheiro",
+          "desc": "O segundo ficheiro a combinar."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "A direção da combinação (vertical/horizontal)."
+        },
+        "swap": {
+          "name": "Trocar?",
+          "desc": "Trocar a ordem dos ficheiros."
+        }
+      }
+    },
+    "blur": {
+      "name": "Desfocar",
+      "description": "Aplica um efeito de desfoque ao ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "radius": {
+          "name": "Raio",
+          "desc": "Intensidade do raio de desfoque (0-100)."
+        },
+        "power": {
+          "name": "Força",
+          "desc": "Multiplicador de força do desfoque (0-100)."
+        }
+      }
+    },
+    "pixelate": {
+      "name": "Pixelizar",
+      "description": "Pixeliza a mídia",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "size": {
+          "name": "Tamanho",
+          "desc": "Tamanho dos blocos de pixels (1-100)."
+        }
+      }
+    },
+    "melt": {
+      "name": "Derreter",
+      "description": "Cria um efeito de derretimento.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "decay": {
+          "name": "Decaimento",
+          "desc": "Intensidade do derretimento (0-100%)."
+        },
+        "loop": {
+          "name": "Repetir",
+          "desc": "Ativar repetição infinita."
+        }
+      }
+    },
+    "rotate": {
+      "name": "Rodar",
+      "description": "Roda o ficheiro com um certo ângulo.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "degrees": {
+          "name": "Graus",
+          "desc": "Ângulo de rotação (-360 a 360)."
+        },
+        "cut": {
+          "name": "Cortar",
+          "desc": "Cortar para as dimensões originais."
+        }
+      }
+    },
+    "alphaextract": {
+      "name": "Extrair Alfa",
+      "description": "Extrai o canal alfa (máscara de transparência) de uma imagem.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
         }
       }
     }
@@ -317,6 +725,7 @@
     "color": "Coloração",
     "duration": "Duração",
     "resizing": "Redimensionamento",
+    "effects": "Efeitos",
     "overlaying": "Sobreposição"
   }
 }
