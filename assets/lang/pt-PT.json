@@ -1,0 +1,1876 @@
+{
+  "commands": {
+    "spin": {
+      "name": "Girar",
+      "description": "Faz girar continuamente o ficheiro de entrada.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação em segundos (0.1s-10s)."
+        },
+        "cut": {
+          "name": "Cortar?",
+          "desc": "Cortar para as dimensões originais."
+        }
+      }
+    },
+    "blob": {
+      "name": "Bolha",
+      "description": "Torna o ficheiro ondulante como uma bolha.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação."
+        }
+      }
+    },
+    "squishy": {
+      "name": "Squishy",
+      "description": "Adiciona um efeito de animação ondulante ao ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação."
+        }
+      }
+    },
+    "bouncy": {
+      "name": "Saltitante",
+      "description": "Faz o ficheiro saltar num fundo transparente.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        }
+      }
+    },
+    "circle": {
+      "name": "Círculo",
+      "description": "Faz o ficheiro mover-se em círculo.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura da área de animação."
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura da área de animação."
+        },
+        "fileWidth": {
+          "name": "Largura do Ficheiro",
+          "desc": "Largura do ficheiro na animação."
+        },
+        "fileHeight": {
+          "name": "Altura do Ficheiro",
+          "desc": "Altura do ficheiro na animação."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação."
+        }
+      }
+    },
+    "infinity": {
+      "name": "Infinito",
+      "description": "Faz o ficheiro mover-se em um símbolo infinito.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura da área de animação."
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura da área de animação."
+        },
+        "fileWidth": {
+          "name": "Largura do Ficheiro",
+          "desc": "Largura do ficheiro na animação."
+        },
+        "fileHeight": {
+          "name": "Altura do Ficheiro",
+          "desc": "Altura do ficheiro na animação."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação."
+        }
+      }
+    },
+    "transition": {
+      "name": "Transição",
+      "description": "Cria uma transição entre vários ficheiros multimédia.",
+      "args": {
+        "files": {
+          "name": "Ficheiros",
+          "desc": "Os conjunto de ficheiros para transição."
+        },
+        "transition": {
+          "name": "Transição",
+          "desc": "O tipo de transição a aplicar (padrão: fade)."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da transição em segundos (máx. 10)."
+        },
+        "waitMode": {
+          "name": "Modo de Espera",
+          "desc": "O modo como a espera entre transições deve ser tratada."
+        },
+        "waitUntilEnd": {
+          "name": "Esperar até ao Fim?",
+          "desc": "Esperar até ao fim do ficheiro anterior antes da transição."
+        },
+        "fadeAudio": {
+          "name": "Desvanecer Áudio?",
+          "desc": "Se o áudio deve desvanecer durante transições."
+        },
+        "waitUntilStart": {
+          "name": "Esperar até ao Início?",
+          "desc": "Esperar até ao início do ficheiro seguinte antes da transição."
+        }
+      }
+    },
+    "tween": {
+      "name": "Interpolar",
+      "description": "Cria uma animação com efeitos de interpolação num ficheiro.",
+      "args": {
+        "files": {
+          "name": "Ficheiros",
+          "desc": "Os conjunto de ficheiros a serem animados."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura do canvas de saída em pixéis."
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura do canvas de saída em pixéis."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração da animação em segundos (máx 10)."
+        },
+        "stretchAngle": {
+          "name": "Esticar Ângulo",
+          "desc": "Faz com que o elemento seja redimensionado após rodar."
+        },
+        "keyframes": {
+          "name": "Fotogramas-chave",
+          "desc": "Os fotogramas-chave para cada interpolação da animação.",
+          "columns": {
+            "f": {
+              "name": "Ficheiro",
+              "desc": "O índice do ficheiro que está a ser interpolado."
+            },
+            "t": {
+              "name": "Tempo",
+              "desc": "O instante em que a interpolação começa a ser aplicada."
+            },
+            "x": {
+              "name": "X",
+              "desc": "Deslocamento horizontal a partir da origem."
+            },
+            "y": {
+              "name": "Y",
+              "desc": "Deslocamento vertical a partir da origem."
+            },
+            "w": {
+              "name": "Largura",
+              "desc": "Largura do elemento."
+            },
+            "h": {
+              "name": "Altura",
+              "desc": "Altura do elemento."
+            },
+            "r": {
+              "name": "Ângulo",
+              "desc": "Ângulo de rotação em graus."
+            },
+            "o": {
+              "name": "Opacidade",
+              "desc": "Opacidade do elemento, de 0 a 1."
+            },
+            "e": {
+              "name": "Estilo",
+              "desc": "Estilo de suavização da animação (exemplo, linear, elástico)."
+            },
+            "d": {
+              "name": "Direção",
+              "desc": "Direção de suavização da animação (exemplo, entrada, saída)."
+            }
+          }
+        }
+      }
+    },
+    "colorize": {
+      "name": "Colorir",
+      "description": "Ajusta as cores de um ficheiro usando curvas de cor ou uma sobreposição de tonalidade.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "color": {
+          "name": "Cor",
+          "desc": "Cor RGB para o ficheiro (0-255 para cada canal)."
+        },
+        "alpha": {
+          "name": "Transparência",
+          "desc": "Componente de transparência (0-255)."
+        },
+        "mode": {
+          "name": "Modo de Cor",
+          "desc": "O modo de ajuste de cor a escolher."
+        },
+        "desaturate": {
+          "name": "Dessaturar?",
+          "desc": "Dessaturar o ficheiro de entrada antes de colori-lo."
+        }
+      }
+    },
+    "rainbow": {
+      "name": "Arco-Íris",
+      "description": "Aplica um efeito de arco-íris ao ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "duration": {
+          "name": "Duração",
+          "desc": "Duração do efeito (máx. 10s)."
+        }
+      }
+    },
+    "pseudocolor": {
+      "name": "Pseudocor",
+      "description": "Aplica um efeito de pseudocor ao ficheiro de entrada usando o predefinição de cor especificada.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "preset": {
+          "name": "Predefinição",
+          "desc": "A predefinição de cor a usar."
+        }
+      }
+    },
+    "slowdown": {
+      "name": "Abrandar",
+      "description": "Reduz a velocidade do ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Fator de redução."
+        }
+      }
+    },
+    "speedup": {
+      "name": "Acelerar",
+      "description": "Aumenta a velocidade do ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Fator de aceleração."
+        }
+      }
+    },
+    "trim": {
+      "name": "Cortar",
+      "description": "Corta um ficheiro entre os tempos especificados.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "start": {
+          "name": "Tempo Inicial",
+          "desc": "O tempo de início (hh:mm:ss ou segundos)."
+        },
+        "end": {
+          "name": "Tempo Final",
+          "desc": "O tempo de fim (hh:mm:ss ou segundos)."
+        }
+      }
+    },
+    "loop": {
+      "name": "Loop",
+      "description": "Repete o ficheiro de entrada um número especificado de vezes.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "times": {
+          "name": "Vezes",
+          "desc": "Número de vezes a repetir (2-100, padrão: 2)"
+        }
+      }
+    },
+    "offset": {
+      "name": "Deslocar",
+      "description": "Desloca a reprodução do ficheiro pelo tempo especificado.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "timestamp": {
+          "name": "Tempo",
+          "desc": "O tempo de deslocação."
+        }
+      }
+    },
+    "playback": {
+      "name": "Reprodução",
+      "description": "Aplicar um efeito de reprodução a um ficheiro. (inverso, bumerangue, etc.)",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "mode": {
+          "name": "Modo",
+          "desc": "O efeito de reprodução a aplicar."
+        }
+      }
+    },
+    "crop": {
+      "name": "Recortar",
+      "description": "Recorta o ficheiro conforme dimensões especificadas.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "x": {
+          "name": "Deslocamento X",
+          "desc": "Deslocamento horizontal para recorte."
+        },
+        "y": {
+          "name": "Deslocamento Y",
+          "desc": "Deslocamento vertical para recorte."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura da área recortada."
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura da área recortada."
+        }
+      }
+    },
+    "cropratio": {
+      "name": "Recortar por Proporção",
+      "description": "Recorta o ficheiro para uma proporção específica.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "ratioW": {
+          "name": "Largura da Proporção",
+          "desc": "A largura da proporção alvo. (ex: 1, 4, 16)"
+        },
+        "ratioH": {
+          "name": "Altura da Proporção",
+          "desc": "A altura da proporção alvo. (ex: 1, 3, 9)"
+        },
+        "originX": {
+          "name": "Origem Horizontal",
+          "desc": "Onde ancorar o corte horizontalmente."
+        },
+        "originY": {
+          "name": "Origem Vertical",
+          "desc": "Onde ancorar o corte verticalmente."
+        }
+      }
+    },
+    "perspective": {
+      "name": "Perspetiva",
+      "description": "Altera a perspetiva de um ficheiro especificando novas posições para os cantos.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "stretch": {
+          "name": "Esticar para Caber",
+          "desc": "Estica o ficheiro para além dos seus limites originais."
+        },
+        "interpolation": {
+          "name": "Interpolação",
+          "desc": "O tipo de interpolação para a correção de perspetiva."
+        },
+        "tlX": {
+          "name": "Canto Superior Esquerdo X",
+          "desc": "Coordenada X para o canto superior esquerdo (píxeis ou %)"
+        },
+        "tlY": {
+          "name": "Canto Superior Esquerdo Y",
+          "desc": "Coordenada Y para o canto superior esquerdo (píxeis ou %)"
+        },
+        "trX": {
+          "name": "Canto Superior Direito X",
+          "desc": "Coordenada X para o canto superior direito (píxeis ou %)"
+        },
+        "trY": {
+          "name": "Canto Superior Direito Y",
+          "desc": "Coordenada Y para o canto superior direito (píxeis ou %)"
+        },
+        "blX": {
+          "name": "Canto Inferior Esquerdo X",
+          "desc": "Coordenada X para o canto inferior esquerdo (píxeis ou %)"
+        },
+        "blY": {
+          "name": "Canto Inferior Esquerdo Y",
+          "desc": "Coordenada Y para o canto inferior esquerdo (píxeis ou %)"
+        },
+        "brX": {
+          "name": "Canto Inferior Direito X",
+          "desc": "Coordenada X para o canto inferior direito (píxeis ou %)"
+        },
+        "brY": {
+          "name": "Canto Inferior Direito Y",
+          "desc": "Coordenada Y para o canto inferior direito (píxeis ou %)"
+        }
+      }
+    },
+    "contract": {
+      "name": "Contrair",
+      "description": "Contrai a área de um ficheiro por um multiplicador.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Quantidade a contrair."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "Direção em que contrair."
+        },
+        "originY": {
+          "name": "Origem Y",
+          "desc": "Ponto de origem vertical."
+        },
+        "originX": {
+          "name": "Origem X",
+          "desc": "Ponto de origem horizontal."
+        }
+      }
+    },
+    "enlarge": {
+      "name": "Ampliar",
+      "description": "Amplia um ficheiro por um multiplicador",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Quantidade a ampliar."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "Direção em que ampliar."
+        },
+        "scaleAlgorithm": {
+          "name": "Algoritmo",
+          "desc": "Algoritmo de redimensionamento a usar."
+        }
+      }
+    },
+    "expand": {
+      "name": "Expandir",
+      "description": "Expande a área de um ficheiro por um multiplicador.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Quantidade a expandir."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "Direção em que expandir."
+        },
+        "originY": {
+          "name": "Origem Y",
+          "desc": "Ponto de origem vertical."
+        },
+        "originX": {
+          "name": "Origem X",
+          "desc": "Ponto de origem horizontal."
+        }
+      }
+    },
+    "scale": {
+      "name": "Redimensionar",
+      "description": "Redimensiona um ficheiro para dimensões específicas.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura desejada em pixéis"
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura desejada em pixéis."
+        },
+        "mode": {
+          "name": "Modo",
+          "desc": "Modo de redimensionamento a usar."
+        },
+        "keepAspectRatio": {
+          "name": "Manter Proporção?",
+          "desc": "Como lidar com a proporção."
+        },
+        "originY": {
+          "name": "Origem Y",
+          "desc": "Ponto de origem vertical."
+        },
+        "originX": {
+          "name": "Origem X",
+          "desc": "Ponto de origem horizontal."
+        },
+        "scaleAlgorithm": {
+          "name": "Algoritmo",
+          "desc": "Algoritmo de redimensionamento a usar."
+        }
+      }
+    },
+    "shrink": {
+      "name": "Reduzir",
+      "description": "Reduz um ficheiro por um multiplicador.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Quantidade a reduzir."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "Direção em que reduzir."
+        },
+        "scaleAlgorithm": {
+          "name": "Algoritmo",
+          "desc": "Algoritmo de redimensionamento a usar."
+        }
+      }
+    },
+    "zoomin": {
+      "name": "Ampliar Zoom",
+      "description": "Aplica zoom num ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Multiplicador de zoom."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "Direção em que ampliar zoom."
+        },
+        "originY": {
+          "name": "Origem Y",
+          "desc": "Ponto de origem vertical."
+        },
+        "originX": {
+          "name": "Origem X",
+          "desc": "Ponto de origem horizontal."
+        },
+        "scaleAlgorithm": {
+          "name": "Algoritmo",
+          "desc": "Algoritmo de redimensionamento a usar."
+        }
+      }
+    },
+    "zoomout": {
+      "name": "Reduzir Zoom",
+      "description": "Reduz o zoom de um ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Multiplicador de zoom."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "Direção em que reduzir zoom."
+        },
+        "originY": {
+          "name": "Origem Y",
+          "desc": "Ponto de origem vertical."
+        },
+        "originX": {
+          "name": "Origem X",
+          "desc": "Ponto de origem horizontal."
+        },
+        "scaleAlgorithm": {
+          "name": "Algoritmo",
+          "desc": "Algoritmo de redimensionamento a usar."
+        }
+      }
+    },
+    "pixenlarge": {
+      "name": "Ampliar Pixéis",
+      "description": "Amplia arte pixelizada usando algoritmos especializados.",
+      "args": {
+        "input": {
+          "name": "Entrada",
+          "desc": "O ficheiro de arte pixelizada para aumentar."
+        },
+        "multiplier": {
+          "name": "Multiplicador",
+          "desc": "Fator de ampliação (2-4)."
+        },
+        "filter": {
+          "name": "Filtro",
+          "desc": "Algoritmo de escalamento de pixéis a utilizar."
+        }
+      }
+    },
+    "blend": {
+      "name": "Misturar",
+      "description": "Combina dois ficheiros com um modo de mistura.",
+      "args": {
+        "base": {
+          "name": "Ficheiro Base",
+          "desc": "O ficheiro base."
+        },
+        "blend": {
+          "name": "Ficheiro de Mistura",
+          "desc": "O ficheiro para misturar."
+        },
+        "mode": {
+          "name": "Modo de Mistura",
+          "desc": "Modo de mistura a utilizar."
+        }
+      }
+    },
+    "overlay": {
+      "name": "Sobrepor",
+      "description": "Sobrepor um ficheiro em cima de outro.",
+      "args": {
+        "base": {
+          "name": "Ficheiro Base",
+          "desc": "O ficheiro base que terá outro ficheiro sobreposto."
+        },
+        "overlay": {
+          "name": "Ficheiro Sobreposto",
+          "desc": "O ficheiro que será sobreposto em cima do ficheiro base."
+        },
+        "originX": {
+          "name": "Origem Horizontal",
+          "desc": "O ponto de ancoragem horizontal para a sobreposição (esquerda/centro/direita)."
+        },
+        "originY": {
+          "name": "Origem Vertical",
+          "desc": "O ponto de ancoragem vertical para a sobreposição (topo/meio/baixo)."
+        },
+        "x": {
+          "name": "Deslocamento X",
+          "desc": "Número de pixéis para deslocar a sobreposição horizontalmente a partir da origem."
+        },
+        "y": {
+          "name": "Deslocamento Y",
+          "desc": "Número de pixéis para deslocar a sobreposição verticalmente a partir da origem."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura da sobreposição em pixéis ou percentagem (ex: 100 ou 50%)."
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura da sobreposição em pixéis ou percentagem (ex: 100 ou 50%)."
+        },
+        "keepAspectRatio": {
+          "name": "Manter Proporção?",
+          "desc": "Se deve manter a proporção original (aumentar/diminuir)."
+        },
+        "start": {
+          "name": "Tempo Inicial",
+          "desc": "Quando começar a mostrar a sobreposição (formato hh:mm:ss)."
+        },
+        "end": {
+          "name": "Tempo Final",
+          "desc": "Quando parar de mostrar a sobreposição (formato hh:mm:ss)."
+        }
+      }
+    },
+    "mask": {
+      "name": "Mascarar",
+      "description": "Aplica uma máscara a um ficheiro.",
+      "args": {
+        "base": {
+          "name": "Ficheiro Base",
+          "desc": "O ficheiro base para aplicar a máscara"
+        },
+        "mask": {
+          "name": "Ficheiro de Máscara",
+          "desc": "O ficheiro a usar como máscara"
+        },
+        "keep": {
+          "name": "Modo Manter",
+          "desc": "Se deve manter áreas brancas em vez de pretas (inverte a máscara)."
+        },
+        "originX": {
+          "name": "Origem X",
+          "desc": "Posição horizontal para colocação da máscara (esquerda/centro/direita)."
+        },
+        "originY": {
+          "name": "Origem Y",
+          "desc": "Posição vertical para colocação da máscara (topo/meio/baixo)."
+        },
+        "x": {
+          "name": "Deslocamento X",
+          "desc": "Deslocamento horizontal da posição de origem em píxeis."
+        },
+        "y": {
+          "name": "Deslocamento Y",
+          "desc": "Deslocamento vertical da posição de origem em píxeis."
+        },
+        "width": {
+          "name": "Largura",
+          "desc": "Largura para redimensionar a máscara (píxeis ou percentagem)."
+        },
+        "height": {
+          "name": "Altura",
+          "desc": "Altura para redimensionar a máscara (píxeis ou percentagem)."
+        },
+        "keepAspectRatio": {
+          "name": "Manter Proporção?",
+          "desc": "Como lidar com a proporção ao redimensionar (aumentar/diminuir)."
+        }
+      }
+    },
+    "stack": {
+      "name": "Empilhar",
+      "description": "Empilha um ficheiro várias vezes na horizontal ou vertical.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "count": {
+          "name": "Contagem",
+          "desc": "Número de cópias adicionais para empilhar (1-100)."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "Direção de empilhamento (horizontal/vertical)."
+        }
+      }
+    },
+    "merge": {
+      "name": "Combinar",
+      "description": "Combina dois ficheiros verticalmente ou horizontalmente.",
+      "args": {
+        "file1": {
+          "name": "Primeiro Ficheiro",
+          "desc": "O primeiro ficheiro a combinar."
+        },
+        "file2": {
+          "name": "Segundo Ficheiro",
+          "desc": "O segundo ficheiro a combinar."
+        },
+        "direction": {
+          "name": "Direção",
+          "desc": "A direção da combinação (vertical/horizontal)."
+        },
+        "swap": {
+          "name": "Trocar?",
+          "desc": "Trocar a ordem dos ficheiros."
+        }
+      }
+    },
+    "blur": {
+      "name": "Desfocar",
+      "description": "Aplica um efeito de desfoque ao ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "radius": {
+          "name": "Raio",
+          "desc": "Intensidade do raio de desfoque (0-100)."
+        },
+        "power": {
+          "name": "Força",
+          "desc": "Multiplicador de força do desfoque (0-100)."
+        }
+      }
+    },
+    "pixelate": {
+      "name": "Pixelizar",
+      "description": "Pixeliza a mídia",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "size": {
+          "name": "Tamanho",
+          "desc": "Tamanho dos blocos de pixéis (1-100)."
+        }
+      }
+    },
+    "melt": {
+      "name": "Derreter",
+      "description": "Cria um efeito de derretimento.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "decay": {
+          "name": "Decaimento",
+          "desc": "Intensidade do derretimento (0-100%)."
+        },
+        "loop": {
+          "name": "Repetir?",
+          "desc": "Ativar repetição infinita."
+        }
+      }
+    },
+    "rotate": {
+      "name": "Rodar",
+      "description": "Roda o ficheiro com um certo ângulo.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "degrees": {
+          "name": "Graus",
+          "desc": "Ângulo de rotação (-360 a 360)."
+        },
+        "cut": {
+          "name": "Cortar?",
+          "desc": "Cortar para as dimensões originais."
+        }
+      }
+    },
+    "alphaextract": {
+      "name": "Extrair Alfa",
+      "description": "Extrai o canal alfa (máscara de transparência) de uma imagem.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        }
+      }
+    },
+    "caption": {
+      "name": "Legenda",
+      "description": "Adiciona uma caixa de legenda branca ao ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "text": {
+          "name": "Texto",
+          "desc": "O texto para mostrar na legenda."
+        },
+        "size": {
+          "name": "Tamanho",
+          "desc": "Multiplicador de tamanho para a legenda."
+        },
+        "color": {
+          "name": "Cor do Texto",
+          "desc": "Cor RGB para o texto (0-255 para cada canal)."
+        },
+        "bgColor": {
+          "name": "Cor de Fundo",
+          "desc": "Cor RGB para o fundo (0-255 para cada canal)."
+        },
+        "font": {
+          "name": "Tipo de Letra",
+          "desc": "Tipo de letra a usar ao renderizar o texto."
+        }
+      }
+    },
+    "meme": {
+      "name": "Meme",
+      "description": "Adiciona legendas de meme (texto superior e inferior) ao ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "topText": {
+          "name": "Texto Superior",
+          "desc": "O texto a mostrar no topo do meme."
+        },
+        "bottomText": {
+          "name": "Texto Inferior",
+          "desc": "O texto a mostrar na base do meme."
+        },
+        "size": {
+          "name": "Tamanho",
+          "desc": "Multiplicador de tamanho do texto."
+        },
+        "borderSize": {
+          "name": "Tamanho da Borda",
+          "desc": "Multiplicador de tamanho da borda do texto."
+        },
+        "color": {
+          "name": "Cor",
+          "desc": "Cor RGB para o texto (0-255 para cada canal)."
+        },
+        "borderColor": {
+          "name": "Cor da Borda",
+          "desc": "Cor RGB para a borda do texto (0-255 para cada canal)."
+        },
+        "font": {
+          "name": "Tipo de Letra",
+          "desc": "Tipo de letra a usar ao renderizar o texto."
+        }
+      }
+    },
+    "motivator": {
+      "name": "Motivador",
+      "description": "Cria um poster motivacional com o ficheiro.",
+      "args": {
+        "input": {
+          "name": "Ficheiro de Entrada",
+          "desc": "O ficheiro de entrada."
+        },
+        "topText": {
+          "name": "Texto Superior",
+          "desc": "O texto grande que aparece no topo (em maiúsculas)."
+        },
+        "bottomText": {
+          "name": "Texto Inferior",
+          "desc": "O texto mais pequeno que aparece em baixo."
+        },
+        "color": {
+          "name": "Cor do Texto",
+          "desc": "Cor RGB para o texto (0-255 para cada canal)."
+        },
+        "bgColor": {
+          "name": "Cor de Fundo",
+          "desc": "Cor RGB para o fundo (0-255 para cada canal)."
+        },
+        "topFont": {
+          "name": "Tipo de Letra Superior",
+          "desc": "Tipo de letra a usar ao renderizar o texto superior."
+        },
+        "bottomFont": {
+          "name": "Tipo de Letra Inferior",
+          "desc": "Tipo de letra a usar ao renderizar o texto inferior."
+        }
+      }
+    },
+    "tenorcaption": {
+      "name": "Legenda Tenor",
+      "description": "Adiciona legendas de estilo Tenor em cima e em baixo de um ficheiro.",
+      "args": {
+        "input": {
+          "name": "Entrada",
+          "desc": "O ficheiro de entrada para adicionar legendas."
+        },
+        "topText": {
+          "name": "Texto Superior",
+          "desc": "Texto a exibir em cima da imagem."
+        },
+        "bottomText": {
+          "name": "Texto Inferior",
+          "desc": "Texto a exibir em baixo da imagem."
+        },
+        "size": {
+          "name": "Tamanho",
+          "desc": "Multiplicador de tamanho do texto."
+        },
+        "borderSize": {
+          "name": "Tamanho da Borda",
+          "desc": "Multiplicador de tamanho da borda do texto."
+        },
+        "color": {
+          "name": "Cor",
+          "desc": "Cor RGB para o texto (0-255 para cada canal)."
+        },
+        "borderColor": {
+          "name": "Cor da Borda",
+          "desc": "Cor RGB para a borda do texto (0-255 para cada canal)."
+        },
+        "font": {
+          "name": "Tipo de Letra",
+          "desc": "Tipo de letra a usar ao renderizar o texto."
+        }
+      }
+    },
+    "localcommand": {
+      "name": "Criar Comando Local",
+      "description": "Cria um novo comando local.",
+      "args": {
+        "name": {
+          "name": "Nome",
+          "desc": "O nome do comando local."
+        },
+        "description": {
+          "name": "Descrição",
+          "desc": "Uma breve descrição do que este comando faz."
+        },
+        "args": {
+          "name": "Argumentos",
+          "desc": "Os argumentos que este comando local aceita.",
+          "columns": {
+            "name": {
+              "name": "Nome",
+              "desc": "O nome do argumento."
+            },
+            "desc": {
+              "name": "Descrição",
+              "desc": "Descrição do que o argumento faz."
+            },
+            "type": {
+              "name": "Tipo de Argumento",
+              "desc": "O tipo do argumento (string, número, etc.)."
+            },
+            "required": {
+              "name": "Obrigatório",
+              "desc": "Se o argumento é obrigatório."
+            },
+            "settings": {
+              "name": "Definições",
+              "desc": "Definições adicionais para este argumento."
+            },
+            "dft": {
+              "name": "Valor Padrão",
+              "desc": "O valor padrão, se nenhum for fornecido."
+            }
+          }
+        },
+        "phrase": {
+          "name": "Frase de Ativação",
+          "desc": "A frase que ativará este comando local."
+        }
+      }
+    },
+    "evalkeywords": {
+      "name": "Computar Palavras-chave",
+      "description": "Analisa e computa as palavras-chave fornecidas.",
+      "args": {
+        "phrase": {
+          "name": "Frase",
+          "desc": "A frase da qual as palavras-chave serão extraídas."
+        }
+      }
+    }
+  },
+  "categories": {
+    "animation": "Animação",
+    "color": "Coloração",
+    "duration": "Duração",
+    "resizing": "Redimensionamento",
+    "captions": "Legendas",
+    "effects": "Efeitos",
+    "overlaying": "Sobreposição",
+    "local": "Local"
+  },
+  "globalArgs": {
+    "encodingPreset": {
+      "name": "Predefinição de Codificação",
+      "desc": "A predefinição usada para a codificação. Predefinições mais lentas resultam em melhor compressão."
+    }
+  },
+  "argValues": {
+    "originX": {
+      "left": "Esquerdo",
+      "center": "Centro",
+      "right": "Direito"
+    },
+    "originY": {
+      "top": "Superior",
+      "middle": "Central",
+      "bottom": "Inferior"
+    },
+    "direction": {
+      "horizontal": "Horizontal",
+      "vertical": "Vertical",
+      "both": "Ambos"
+    },
+    "keepAspectRatio": {
+      "no": "Não",
+      "increase": "Aumentar",
+      "decrease": "Diminuir"
+    },
+    "encodingPreset": {
+      "ultrafast": "Ultra rápido",
+      "superfast": "Super rápido",
+      "veryfast": "Muito rápido",
+      "faster": "Mais rápido",
+      "fast": "Rápido",
+      "medium": "Médio",
+      "slow": "Lento",
+      "slower": "Mais lento",
+      "veryslow": "Muito lento"
+    },
+    "colorize": {
+      "tint": "Tonalidade",
+      "light": "Claro",
+      "dark": "Escuro"
+    },
+    "easingStyle": {
+      "linear": "Linear",
+      "constant": "Constante",
+      "sine": "Senoidal",
+      "quad": "Quadrático",
+      "cubic": "Cúbico",
+      "quart": "Quartico",
+      "quint": "Quíntico",
+      "expo": "Exponencial",
+      "circ": "Circular",
+      "back": "Recuar",
+      "elastic": "Elástico",
+      "bounce": "Saltitar"
+    },
+    "easingDirection": {
+      "in": "Entrar",
+      "out": "Sair",
+      "inOut": "Entrar-Sair"
+    },
+    "scaleMode": {
+      "scale": "Escala",
+      "area": "Área",
+      "zoom": "Zoom"
+    },
+    "scaleAlgorithm": {
+      "fast_bilinear": "Bilinear Rápido",
+      "bilinear": "Bilinear",
+      "bicubic": "Bicúbico",
+      "experimental": "Experimental",
+      "neighbor": "Vizinho Mais Próximo",
+      "area": "Média de Área",
+      "bicublin": "Bicublin",
+      "gauss": "Gaussiano",
+      "sinc": "Sinc",
+      "lanczos": "Lanczos",
+      "spline": "Bicúbico Spline",
+      "print_info": "Imprimir Informação",
+      "accurate_rnd": "Arredondamento Preciso",
+      "full_chroma_int": "Interpolação Cromática Completa",
+      "full_chroma_inp": "Entrada Cromática Completa",
+      "bitexact": "Exatidão de Bits"
+    },
+    "filter": {
+      "xbr": "xBR (Orientado a bordas)",
+      "hqx": "HQX (Alta Qualidade)"
+    },
+    "transition": {
+      "fade": "Desvanecer",
+      "none": "Nenhuma",
+      "wipeLeft": "Limpar para a Esquerda",
+      "wipeRight": "Limpar para a Direita",
+      "wipeUp": "Limpar para Cima",
+      "wipeDown": "Limpar para Baixo",
+      "slideLeft": "Deslizar para a Esquerda",
+      "slideRight": "Deslizar para a Direita",
+      "slideUp": "Deslizar para Cima",
+      "slideDown": "Deslizar para Baixo",
+      "circleCrop": "Corte Circular",
+      "rectCrop": "Corte Retangular",
+      "distance": "Distância",
+      "fadeBlack": "Desvanecer para Preto",
+      "fadeWhite": "Desvanecer para Branco",
+      "radial": "Radial",
+      "smoothLeft": "Suavizar para a Esquerda",
+      "smoothRight": "Suavizar para a Direita",
+      "smoothUp": "Suavizar para Cima",
+      "smoothDown": "Suavizar para Baixo",
+      "circleOpen": "Abrir Círculo",
+      "circleClose": "Fechar Círculo",
+      "vertOpen": "Abrir Vertical",
+      "vertClose": "Fechar Vertical",
+      "horzOpen": "Abrir Horizontal",
+      "horzClose": "Fechar Horizontal",
+      "dissolve": "Dissolver",
+      "pixelize": "Pixelizar",
+      "diagTl": "Diagonal Superior-Esquerda",
+      "diagTr": "Diagonal Superior-Direita",
+      "diagBl": "Diagonal Inferior-Esquerda",
+      "diagBr": "Diagonal Inferior-Direita",
+      "hlSlice": "Corte Horizontal à Esquerda",
+      "hrSlice": "Corte Horizontal à Direita",
+      "vuSlice": "Corte Vertical para Cima",
+      "vdSlice": "Corte Vertical para Baixo",
+      "random": "Aleatório"
+    },
+    "waitMode": {
+      "clone": "Clonar",
+      "add": "Adicionar"
+    },
+    "pseudocolorPreset": {
+      "magma": "Magma",
+      "inferno": "Inferno",
+      "plasma": "Plasma",
+      "viridis": "Viridis",
+      "turbo": "Turbo",
+      "cividis": "Cividis",
+      "range1": "Intervalo 1",
+      "range2": "Intervalo 2",
+      "shadows": "Sombras",
+      "highlights": "Realces",
+      "solar": "Solar",
+      "nominal": "Nominal",
+      "preferred": "Preferido",
+      "total": "Total"
+    },
+    "blendMode": {
+      "addition": "Adição",
+      "and": "E",
+      "average": "Média",
+      "burn": "Queimar",
+      "bleach": "Branqueamento",
+      "darken": "Escurecer",
+      "difference": "Diferença",
+      "divide": "Dividir",
+      "dodge": "Esquivar",
+      "freeze": "Congelar",
+      "exclusion": "Exclusão",
+      "extremity": "Extremidade",
+      "geometric": "Geométrico",
+      "glow": "Brilho",
+      "grainExtract": "Extrair Granulado",
+      "grainMerge": "Mesclar Granulado",
+      "hardLight": "Luz Forte",
+      "hardOverlay": "Sobreposição Forte",
+      "harmonic": "Harmónico",
+      "interpolate": "Interpolar",
+      "hardMix": "Mistura Forte",
+      "heat": "Calor",
+      "lighten": "Clarear",
+      "linearLight": "Luz Linear",
+      "multiply": "Multiplicar",
+      "multiply128": "Multiplicar 128",
+      "negation": "Negação",
+      "normal": "Normal",
+      "or": "Ou",
+      "overlay": "Sobreposição",
+      "phoenix": "Fénix",
+      "pinLight": "Luz de Alfinete",
+      "reflect": "Refletir",
+      "screen": "Ecrã",
+      "stain": "Mancha",
+      "softLight": "Luz Suave",
+      "softDifference": "Diferença Suave",
+      "subtract": "Subtrair",
+      "vividLight": "Luz Viva",
+      "xor": "Xor"
+    },
+    "playback": {
+      "reverse": "Inverso",
+      "boomerang": "Bumerangue",
+      "reverseBoomerang": "Bumerangue Inverso"
+    },
+    "fontStyle": {
+      "Normal": "Normal",
+      "Italic": "Itálico",
+      "Oblique": "Oblíquo",
+      "Thin": "Fino",
+      "ExtraLight": "Extra Leve",
+      "Light": "Leve",
+      "Medium": "Médio",
+      "DemiBold": "Meio Negrito",
+      "Bold": "Negrito",
+      "ExtraBold": "Extra Negrito",
+      "Black": "Preto",
+      "UltraCondensed": "Ultra Condensado",
+      "ExtraCondensed": "Extra Condensado",
+      "Condensed": "Condensado",
+      "SemiCondensed": "Semi Condensado",
+      "SemiExpanded": "Semi Expandido",
+      "Expanded": "Expandido",
+      "ExtraExpanded": "Extra Expandido",
+      "UltraExpanded": "Ultra Expandido"
+    },
+    "argType": {
+      "string": "String",
+      "integer": "Inteiro",
+      "number": "Número",
+      "boolean": "Booleano",
+      "file": "Ficheiro"
+    }
+  },
+  "special": {
+    "functions": {
+      "repeat": {
+        "description": "Repete uma frase várias vezes.",
+        "args": {
+          "phrase": {
+            "desc": "A frase a repetir."
+          },
+          "times": {
+            "desc": "Número de repetições da frase."
+          },
+          "separator": {
+            "desc": "Texto a inserir entre cada repetição."
+          }
+        }
+      },
+      "rawrepeat": {
+        "description": "Repete uma frase várias vezes, processando palavras-chave em cada repetição.",
+        "args": {
+          "phrase": {
+            "desc": "A frase a repetir, com palavras-chave permitidas."
+          },
+          "times": {
+            "desc": "Número de repetições da frase."
+          },
+          "separator": {
+            "desc": "Texto a inserir entre cada repetição."
+          }
+        }
+      },
+      "random": {
+        "description": "Gera um número aleatório dentro de um intervalo.",
+        "args": {
+          "min": {
+            "desc": "Valor mínimo (inclusivo)."
+          },
+          "max": {
+            "desc": "Valor máximo (inclusivo)."
+          }
+        }
+      },
+      "arg": {
+        "description": "Devolve o valor bruto de um argumento específico.",
+        "args": {
+          "name": {
+            "desc": "O nome do argumento a devolver."
+          }
+        }
+      },
+      "command": {
+        "description": "Executa um comando e devolve o seu resultado.",
+        "args": {
+          "name": {
+            "desc": "O nome do comando a executar."
+          },
+          "args": {
+            "desc": "Os argumentos brutos a passar ao comando."
+          }
+        }
+      },
+      "declare": {
+        "description": "Declara uma nova variável com um valor estático.",
+        "args": {
+          "name": {
+            "desc": "O nome da variável a declarar."
+          },
+          "value": {
+            "desc": "O valor a atribuir à variável."
+          }
+        }
+      },
+      "if": {
+        "description": "Avalia condicionalmente um valor com base num booleano.",
+        "args": {
+          "condition": {
+            "desc": "A condição a avaliar como booleano."
+          },
+          "then": {
+            "desc": "O valor se a condição for verdadeira."
+          },
+          "else": {
+            "desc": "O valor se a condição for falsa."
+          }
+        }
+      },
+      "rawdeclare": {
+        "description": "Declara uma variável cujo valor é avaliado como palavras-chave.",
+        "args": {
+          "name": {
+            "desc": "O nome da variável a declarar."
+          },
+          "value": {
+            "desc": "O conteúdo da variável a ser avaliado quando acedido."
+          }
+        }
+      },
+      "return": {
+        "description": "Devolve um valor final de uma sequência de palavras-chave.",
+        "args": {
+          "value": {
+            "desc": "O valor a devolver."
+          }
+        }
+      },
+      "returnfile": {
+        "description": "Devolve um ficheiro como resultado final.",
+        "args": {
+          "path": {
+            "desc": "O caminho do ficheiro a devolver."
+          }
+        }
+      },
+      "undeclare": {
+        "description": "Remove uma variável anteriormente declarada.",
+        "args": {
+          "name": {
+            "desc": "O nome da variável a remover."
+          }
+        }
+      },
+      "noArgs": "O conjunto de valores a serem avaliados."
+    },
+    "keywords": {
+      "animal": {
+        "description": "Devolve o nome de um animal aleatório.",
+        "list": [
+          "aardvark",
+          "addax",
+          "jacaré",
+          "alpaca",
+          "formiga",
+          "tamanduá",
+          "antílope",
+          "aoudad",
+          "macaco",
+          "argali",
+          "tatu",
+          "babuíno",
+          "texugo",
+          "águia-careca",
+          "craca",
+          "basilisco",
+          "morcego",
+          "urso",
+          "castor",
+          "abelha",
+          "bighorn",
+          "bisonte",
+          "caranguejo-azul",
+          "javali",
+          "periquito",
+          "búfalo",
+          "touro",
+          "abelhão",
+          "coelhinho",
+          "burro",
+          "borboleta",
+          "camelo",
+          "canário",
+          "capivara",
+          "gato",
+          "centopeia",
+          "camaleão",
+          "camurça",
+          "guepardo",
+          "galinha",
+          "chimpanzé",
+          "chinchila",
+          "esquilo",
+          "civeta",
+          "molusco",
+          "quati",
+          "barata",
+          "peixe-dourado",
+          "poldro",
+          "cola",
+          "condor",
+          "puma",
+          "vaca",
+          "caranguejo",
+          "crocodilo",
+          "corvo",
+          "veado",
+          "cão-selvagem",
+          "cerva",
+          "cão",
+          "leirão",
+          "libélula",
+          "dromedário",
+          "ornitorrinco",
+          "dugongo",
+          "escaravelho",
+          "coruja-real",
+          "minhoca",
+          "eland",
+          "enguia",
+          "elefante",
+          "emu",
+          "armatilho",
+          "ovelha",
+          "cervo-jovem",
+          "furão",
+          "tentilhão",
+          "peixe",
+          "mosca",
+          "raposa",
+          "rã",
+          "gazela",
+          "gemsbok",
+          "monstro-de-gila",
+          "girafa",
+          "cabra",
+          "ganso",
+          "toupeira",
+          "gorila",
+          "gafanhoto",
+          "urso-pardo",
+          "marmota",
+          "guanaco",
+          "porquinho-da-índia",
+          "lebre",
+          "gnu",
+          "ouriço",
+          "vaca-escocesa",
+          "hipopótamo",
+          "porco",
+          "cavalo",
+          "beija-flor",
+          "hiena",
+          "ibex",
+          "iguana",
+          "impala",
+          "chacal",
+          "onça",
+          "alforreca",
+          "jerboa",
+          "canguru",
+          "gatinho",
+          "coala",
+          "cordeiro",
+          "joaninha",
+          "lêmure",
+          "leopardo",
+          "leão",
+          "lagarto",
+          "lama",
+          "lagosta",
+          "inseparável",
+          "lince",
+          "mandril",
+          "égua",
+          "sagui",
+          "marta",
+          "milípede",
+          "vison",
+          "toupeira",
+          "mangusto",
+          "macaco",
+          "alce",
+          "mosquito",
+          "traça",
+          "mula",
+          "cervo-almiscarado",
+          "boi-almiscarado",
+          "rato-almiscarado",
+          "mustangue",
+          "mainá",
+          "tritão",
+          "ocelote",
+          "polvo",
+          "ocapi",
+          "gambá",
+          "orangotango",
+          "órix",
+          "avestruz",
+          "lontra",
+          "boi",
+          "ostra",
+          "panda",
+          "pantera",
+          "periquito",
+          "papagaio",
+          "pavão",
+          "pecari",
+          "pinguim",
+          "porco",
+          "pombo",
+          "urso-polar",
+          "pónei",
+          "porco-espinho",
+          "toninha",
+          "cão-da-pradaria",
+          "antilocapra",
+          "baiacu",
+          "puma",
+          "cachorrinho",
+          "quagga",
+          "coelho",
+          "guaxinim",
+          "carneiro",
+          "rato",
+          "raia",
+          "rena",
+          "rinoceronte",
+          "salamandra",
+          "escorpião",
+          "cavalo-marinho",
+          "foca",
+          "tubarão",
+          "ovelha",
+          "musaranho",
+          "camarão",
+          "raposa-prateada",
+          "mouffette",
+          "preguiça",
+          "lesma",
+          "caracol",
+          "cobra",
+          "coruja-das-neves",
+          "pardal",
+          "aranha",
+          "lula",
+          "springbok",
+          "esquilo",
+          "garanhão",
+          "boi castrado",
+          "estrela-do-mar",
+          "raia",
+          "cegonha",
+          "cisne",
+          "anta",
+          "térmita",
+          "carraça",
+          "tigre",
+          "sapo",
+          "tartaruga-terrestre",
+          "peru",
+          "tartaruga",
+          "vicunha",
+          "morsa",
+          "javali",
+          "cobu",
+          "doninha",
+          "baleia",
+          "gato-selvagem",
+          "lobo",
+          "glutão",
+          "vombate",
+          "marmota",
+          "pica-pau",
+          "iaque",
+          "zebra",
+          "zebu"
+        ]
+      }
+    }
+  },
+  "gui": {
+    "sidebar": {
+      "none": "Ainda não existem\ncomandos aqui...",
+      "commands": "Comandos",
+      "favorites": "Favoritos",
+      "recents": "Recentes"
+    },
+    "menu": {
+      "desc": "Opções adicionais",
+      "loadState": "Carregar do estado existente",
+      "saveState": "Guardar estado atual",
+      "keywords": "Modo palavras-chave",
+      "reset": "Restaurar valores pré-definidos",
+      "deleteLocalCommand": "Eliminar comando local",
+      "addFavorite": "Adicionar comando aos favoritos",
+      "removeFavorite": "Remover comando dos favoritos",
+      "showSidebar": "Mostrar barra lateral",
+      "hideSidebar": "Ocultar barra lateral",
+      "showTasklist": "Mostrar lista de tarefas",
+      "hideTasklist": "Ocultar lista de tarefas",
+      "cut": "Cortar",
+      "copy": "Copiar",
+      "paste": "Colar",
+      "selectAll": "Selecionar tudo",
+      "delete": "Eliminar",
+      "easingStyle": "Estilo de Suavização",
+      "easingDirection": "Direção de Suavização"
+    },
+    "tasks": {
+      "statusText": {
+        "running": "Em execução...",
+        "completed": "Completada.",
+        "failed": "Falhou.",
+        "cancelling": "A cancelar...",
+        "cancelled": "Cancelada.",
+        "killed": "Encerrada."
+      },
+      "title": "Tarefas",
+      "task": "Tarefa",
+      "none": "Ainda não há tarefas\na serem processadas...",
+      "command": "Comando",
+      "status": "Estado",
+      "processes": "Processos",
+      "paths": "Caminhos",
+      "cancel": "Cancelar",
+      "delete": "Eliminar",
+      "show": "Mostrar",
+      "forceCancel": "Forçar Cancelamento"
+    },
+    "mainTitle": "Bem-vindo ao RapidRend!",
+    "mainDescription": "Selecione um comando na barra lateral para começar.",
+    "executeButton": "Executar",
+    "executingButton": "A executar...",
+    "searchPlaceholder": "Pesquisar...",
+    "saveFile": "Salvar...",
+    "openFile": "Abrir ficheiro",
+    "openFolder": "Abrir pasta",
+    "fileSaved": "Ficheiro salvo em",
+    "readingFile": "A ler ficheiros...",
+    "filesSelected": "ficheiros selecionados.",
+    "previewLoaded": "Pré-visualização carregada com sucesso.",
+    "processedFile": "Ficheiro processado",
+    "commandOutput": "Saída",
+    "argFields": {
+      "string": "Insira",
+      "file": "Selecionar...",
+      "number": "Insira um número",
+      "pixels": "Insira pixéis ou %",
+      "timestamp": "Insira um tempo",
+      "color": "Escolha uma cor",
+      "font": "Selecione um tipo de letra...",
+      "fontStyle": "Estilo...",
+      "arguments": "Adicionar linha",
+      "unsupported": "Tipo de argumento não suportado",
+      "more": "Mais opções..."
+    }
+  },
+  "cli": {
+    "help": {
+      "execute": "Utilização:\n  rapidcli <comando> [opções]",
+      "commandsListHeader": "Categorias de comandos disponíveis:",
+      "usage": "Também pode utilizar:",
+      "keywordUsage": "Sistema de palavras-chave:",
+      "flags": "Parâmetros:",
+      "guiFlags": "Parâmetros GUI:",
+      "info": "Mostrar informações de ajuda.",
+      "version": "Mostrar versão da aplicação.",
+      "verbose": "Ativar o modo verboso.",
+      "noNewline": "Não adicionar uma nova linha às saídas.",
+      "theme": "Escolher o tema predefinido (light/dark).",
+      "commands": {
+        "usage": "Listar todos os comandos disponíveis.",
+        "overview": "Comandos disponíveis:",
+        "forCategory": "Comandos na categoria %s:",
+        "categoryUsage": "Listar comandos de uma categoria.",
+        "invalidCategory": "Categoria inválida: %s",
+        "commandUsage": "Mostrar ajuda para um comando específico.",
+        "invalidCommand": "Comando inválido: %s",
+        "argsHeader": "Argumentos:"
+      },
+      "keywords": {
+        "usage": "Listar palavras-chave disponíveis.",
+        "overview": "Palavras-chave disponíveis:",
+        "keywordUsage": "Mostrar ajuda para uma palavra-chave específica.",
+        "invalidKeyword": "Palavra-chave inválida: %s",
+        "valuesHeader": "Valores possíveis:"
+      },
+      "functions": {
+        "usage": "Listar funções disponíveis.",
+        "overview": "Funções disponíveis:",
+        "functionUsage": "Mostrar ajuda para uma função específica.",
+        "invalidFunction": "Função inválida: %s",
+        "argsHeader": "Argumentos:"
+      }
+    }
+  },
+  "editors": {
+    "commands": {
+      "crop": "Recorte",
+      "overlay": "Sobreposição",
+      "perspective": "Perspetiva",
+      "tween": "Interpolação"
+    },
+    "title": "Editor de %s",
+    "undo": "Anular mudanças",
+    "error": "O argumento \"%s\" não foi especificado."
+  },
+  "infoPost": {
+    "validateFile": "A validar ficheiro pelo caminho",
+    "cantProcessFile": "O ficheiro não pode ser processado",
+    "fileValidated": "Ficheiro \"%s\" validado com sucesso",
+    "commandTask": "A tarefa #%s %s",
+    "taskStatus": {
+      "running": "está a ser executada...",
+      "completed": "foi completada.",
+      "failed": "falhou.",
+      "cancelling": "está a cancelada...",
+      "cancelled": "foi cancelada.",
+      "killed": "foi morta."
+    }
+  },
+  "errorMessages": {
+    "fileNotFound": "Ficheiro não encontrado",
+    "unsupportedFileType": "Ficheiro não suportado de tipo",
+    "unsupportedFileExt": "Ficheiro não suportado de extensão",
+    "invalidArgument": "Argumento inválido",
+    "invalidCommand": "Este comando não existe",
+    "requiredArgument": "Um argumento necessário não foi especificado"
+  },
+  "popupDisplay": {
+    "status": {
+      "error": {
+        "title": "Erro",
+        "format": "Erro de %s!",
+        "openFile": "abertura de ficheiro",
+        "argumentParse": "análise de argumentos",
+        "argumentFieldParse": "análise de campos de argumentos",
+        "argumentValidate": "validação de argumentos",
+        "commandExecute": "execução de comando",
+        "editorOpening": "abertura do editor",
+        "loadState": "carregamento de estado",
+        "saveState": "gravação de estado"
+      },
+      "success": {
+        "title": "Sucesso",
+        "format": "%s",
+        "localCommandTitle": "Comando local criado com sucesso.",
+        "localCommandDesc": "Agora pode executar o comando \"%s\" da barra lateral.",
+        "saveStateTitle": "Estado atual guardado com sucesso.",
+        "saveStateDesc": "Agora pode carregar o estado atual dos argumentos a partir do ficheiro JSON guardado."
+      }
+    }
+  }
+}

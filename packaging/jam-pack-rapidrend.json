@@ -1,0 +1,116 @@
+{
+  "fetch": {
+    "gitFromCwd": true,
+    "postFetch": [
+      "cd $fetchStep_sourcePath && mkdir bin",
+      {
+        "platform": ["linux"],
+        "commands": [
+          "cd $fetchStep_sourcePath && cp ../../../bin/* bin"
+        ]
+      },
+      {
+        "platform": ["macos"],
+        "commands": [
+          "cd $fetchStep_sourcePath && cp ../../../bin/* bin"
+        ]
+      },
+      {
+        "platform": ["windows"],
+        "commands": [
+          "cd $fetchStep_sourcePath && copy ..\\\\..\\\\..\\\\bin bin"
+        ]
+      }
+    ]
+  },
+  "build": {
+    "applicationName": "RapidRend",
+    "applicationVersion": "0.7.0",
+    "packageManager": "npm"
+  },
+  "prune": {
+    "skip": false,
+    "patterns": [
+      {
+        "keep": [
+          "LICENSE",
+          "README.md",
+          "package.json",
+          "*.node",
+          "bin/**/*",
+          "dist/**/*",
+          "assets/**/*"
+        ]
+      }
+    ],
+    "postPrune": [
+      {
+        "platform": ["linux"],
+        "commands": [
+          "cd $fetchStep_sourcePath && cp $pruneStep_trashDirectory/packaging/linux/rapidrend ."
+        ]
+      },
+      {
+        "platform": ["macos"],
+        "commands": [
+          "cd $fetchStep_sourcePath && cp $pruneStep_trashDirectory/packaging/macos/rapidrend ."
+        ]
+      },
+      {
+        "platform": ["windows"],
+        "commands": [
+          "cd $fetchStep_sourcePath && copy $pruneStep_trashDirectory\\\\packaging\\\\windows\\\\rapidrend.exe"
+        ]
+      }
+    ]
+  },
+  "addLauncher": {
+    "skip": true,
+    "jsEntryPoint": "dist/index.js",
+    "windowsIcon": "windows/rapidrend.ico",
+    "windowsVersionString": "0.7.0",
+    "windowsFileVersion": "0.7.0",
+    "windowsProductName": "RapidRend",
+    "windowsLegalCopyright": "Copyright (c) 2024-2025 rapidrend",
+    "windowsOriginalFilename": "rapidrend.exe",
+    "windowsFileDescription": "RapidRend"
+  },
+  "quietQode": {},
+  "zip": {
+    "platforms": ["linux", "macos", "windows"],
+    "skip": false
+  },
+  "debian": {
+    "skip": false,
+    "controlFields": {
+      "Section": "default",
+      "Maintainer": "rapidrend",
+      "Priority": "optional",
+      "Description": "Uma aplicação multiuso para manipulação de multimédia."
+    },
+    "prePack": [
+      "cd $debianStep_debianSourceDirectory && mkdir -p usr/share/applications",
+      "cd $debianStep_debianSourceDirectory && cp $pruneStep_trashDirectory/packaging/linux/rapidrend.desktop usr/share/applications/",
+
+      "cd $debianStep_debianSourceDirectory && mkdir -p usr/share/icons",
+      "cd $debianStep_debianSourceDirectory && cp -r $pruneStep_trashDirectory/packaging/linux/icons/hicolor usr/share/icons/"
+    ]
+  },
+  "nsis": {
+    "skip": false,
+    "appTitle": "RapidRend",
+    "shortcutIcon": "$pruneStep_trashDirectory/packaging/windows/rapidrend.ico",
+    "installerIcon": "$pruneStep_trashDirectory/packaging/windows/rapidrend.ico",
+    "uninstallerIcon": "$pruneStep_trashDirectory/packaging/windows/rapidrend.ico"
+  },
+  "dmg" : {
+    "applicationIcon": "$pruneStep_trashDirectory/packaging/macos/rapidrend.icns",
+    "applicationTitle": "RapidRend",
+    "nsHumanReadableCopyright": "Copyright (c) 2024-2025 rapidrend",
+    "cfBundleIdentifier": "com.rapidrend.rapidrend",
+    "cfBundleExecutable": "rapidrend",
+    "prePack": [
+      "mv $dmgStep_dmgResourcesDirectory/rapidrend $dmgStep_dmgMacOSDirectory/"
+    ]
+  }
+}

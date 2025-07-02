@@ -1,0 +1,9 @@
+.env
+.git
+.directory
+bin
+dist
+node_modules
+tmp-jam-pack-nodegui
+output.*
+*.log

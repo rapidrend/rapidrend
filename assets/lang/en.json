@@ -1,0 +1,1876 @@
+{
+  "commands": {
+    "spin": {
+      "name": "Spin",
+      "description": "Continuously spins the input file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the spin animation in seconds (0.1s-10s)."
+        },
+        "cut": {
+          "name": "Cut?",
+          "desc": "Crop to original dimensions."
+        }
+      }
+    },
+    "blob": {
+      "name": "Blob",
+      "description": "Makes the file squishy like a blob.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the animation."
+        }
+      }
+    },
+    "squishy": {
+      "name": "Squishy",
+      "description": "Makes the file squishy with a wobbly animation effect.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the animation."
+        }
+      }
+    },
+    "bouncy": {
+      "name": "Bouncy",
+      "description": "Makes the file bounce around on a transparent background.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        }
+      }
+    },
+    "circle": {
+      "name": "Circle",
+      "description": "Makes the file move in a circular motion.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Width of the animation area."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Height of the animation area."
+        },
+        "fileWidth": {
+          "name": "File Width",
+          "desc": "Width of the file in the animation."
+        },
+        "fileHeight": {
+          "name": "File Height",
+          "desc": "Height of the file in the animation."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the animation."
+        }
+      }
+    },
+    "infinity": {
+      "name": "Infinity",
+      "description": "Makes the file move in an infinity symbol motion.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Width of the animation area."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Height of the animation area."
+        },
+        "fileWidth": {
+          "name": "File Width",
+          "desc": "Width of the file in the animation."
+        },
+        "fileHeight": {
+          "name": "File Height",
+          "desc": "Height of the file in the animation."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the animation."
+        }
+      }
+    },
+    "transition": {
+      "name": "Transition",
+      "description": "Creates a transition between various media files.",
+      "args": {
+        "files": {
+          "name": "Files",
+          "desc": "The set of files to transition to."
+        },
+        "transition": {
+          "name": "Transition",
+          "desc": "The type of transition to apply (default: fade)."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the transition in seconds (max 10)."
+        },
+        "waitMode": {
+          "name": "Wait Mode",
+          "desc": "The mode the wait between transitions should be handled."
+        },
+        "waitUntilEnd": {
+          "name": "Wait Until End?",
+          "desc": "Whether to wait until the end of the previous file before transitioning."
+        },
+        "fadeAudio": {
+          "name": "Fade Audio?",
+          "desc": "Whether to fade audio between transitions."
+        },
+        "waitUntilStart": {
+          "name": "Wait Until Start?",
+          "desc": "Whether to wait until the start of the next file before transitioning."
+        }
+      }
+    },
+    "tween": {
+      "name": "Tween",
+      "description": "Creates an animation with tweening effects on a file.",
+      "args": {
+        "files": {
+          "name": "Files",
+          "desc": "The set of files to be animated."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Width of the output canvas in pixels."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Height of the output canvas in pixels."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Animation duration in seconds."
+        },
+        "stretchAngle": {
+          "name": "Stretch Angle",
+          "desc": "Causes the element to be scaled after rotating."
+        },
+        "keyframes": {
+          "name": "Keyframes",
+          "desc": "The keyframes for each of this animation's tween.",
+          "columns": {
+            "f": {
+              "name": "File",
+              "desc": "The index of the file that's being tweened."
+            },
+            "t": {
+              "name": "Time",
+              "desc": "The timestamp to start applying the tween."
+            },
+            "x": {
+              "name": "X",
+              "desc": "Horizontal offset from origin."
+            },
+            "y": {
+              "name": "Y",
+              "desc": "Vertical offset from origin."
+            },
+            "w": {
+              "name": "Width",
+              "desc": "Width of the element."
+            },
+            "h": {
+              "name": "Height",
+              "desc": "Height of the element."
+            },
+            "r": {
+              "name": "Angle",
+              "desc": "Rotation angle in degrees."
+            },
+            "o": {
+              "name": "Opacity",
+              "desc": "Opacity of the element, from 0 to 1."
+            },
+            "e": {
+              "name": "Style",
+              "desc": "Animation easing style (e.g., linear, back)."
+            },
+            "d": {
+              "name": "Direction",
+              "desc": "Animation easing direction (e.g., in, out)."
+            }
+          }
+        }
+      }
+    },
+    "colorize": {
+      "name": "Colorize",
+      "description": "Adjust the colors of a file using either color curves or a tint overlay.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "color": {
+          "name": "Color",
+          "desc": "RGB color for the file (0-255 for each channel)."
+        },
+        "alpha": {
+          "name": "Alpha",
+          "desc": "Transparency component (0-255)."
+        },
+        "mode": {
+          "name": "Color Mode",
+          "desc": "The color adjustment mode to choose."
+        },
+        "desaturate": {
+          "name": "Desaturate?",
+          "desc": "Desaturate the input file before colorizing it."
+        }
+      }
+    },
+    "rainbow": {
+      "name": "Rainbow",
+      "description": "Applies a rainbow effect to the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "duration": {
+          "name": "Duration",
+          "desc": "Duration of the effect (max 10s)."
+        }
+      }
+    },
+    "pseudocolor": {
+      "name": "Pseudocolor",
+      "description": "Applies a pseudocolor effect to the input file using the specified color preset.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "preset": {
+          "name": "Preset",
+          "desc": "The color preset to use."
+        }
+      }
+    },
+    "slowdown": {
+      "name": "Slowdown",
+      "description": "Slows down the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "Slowdown factor."
+        }
+      }
+    },
+    "speedup": {
+      "name": "Speedup",
+      "description": "Speeds up the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "Speedup factor."
+        }
+      }
+    },
+    "trim": {
+      "name": "Trim",
+      "description": "Trims a file between specified timestamps.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "start": {
+          "name": "Start Time",
+          "desc": "The starting timestamp (hh:mm:ss or seconds)."
+        },
+        "end": {
+          "name": "End Time",
+          "desc": "The ending timestamp (hh:mm:ss or seconds)."
+        }
+      }
+    },
+    "loop": {
+      "name": "Loop",
+      "description": "Loops the input file a specified number of times.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "times": {
+          "name": "Times",
+          "desc": "Number of times to loop (2-100, default: 2)"
+        }
+      }
+    },
+    "offset": {
+      "name": "Offset",
+      "description": "Offsets the file's playback by the specified timestamp.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "timestamp": {
+          "name": "Timestamp",
+          "desc": "The offset time."
+        }
+      }
+    },
+    "playback": {
+      "name": "Playback",
+      "description": "Apply a playback effect to the file. (reverse, boomerang, etc.)",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "mode": {
+          "name": "Mode",
+          "desc": "The playback effect to apply."
+        }
+      }
+    },
+    "crop": {
+      "name": "Crop",
+      "description": "Crops the file according to specified dimensions.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "x": {
+          "name": "X Offset",
+          "desc": "Horizontal offset for cropping."
+        },
+        "y": {
+          "name": "Y Offset",
+          "desc": "Vertical offset for cropping."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Width of the cropped area."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Height of the cropped area."
+        }
+      }
+    },
+    "cropratio": {
+      "name": "Crop Aspect Ratio",
+      "description": "Crops the file to a specific aspect ratio.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "ratioW": {
+          "name": "Ratio Width",
+          "desc": "The target aspect ratio width. (ex: 1, 4, 16)"
+        },
+        "ratioH": {
+          "name": "Ratio Height",
+          "desc": "The target aspect ratio height. (ex: 1, 3, 9)"
+        },
+        "originX": {
+          "name": "Horizontal Origin",
+          "desc": "Where to anchor the crop horizontally."
+        },
+        "originY": {
+          "name": "Vertical Origin",
+          "desc": "Where to anchor the crop vertically."
+        }
+      }
+    },
+    "perspective": {
+      "name": "Perspective",
+      "description": "Changes the perspective of a file by specifying new corner positions.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "stretch": {
+          "name": "Stretch to Fit",
+          "desc": "Stretches the file beyond its original bounds."
+        },
+        "interpolation": {
+          "name": "Interpolation",
+          "desc": "The type of interpolation for the perspective correction."
+        },
+        "tlX": {
+          "name": "Top-Left X",
+          "desc": "X coordinate for top-left corner (pixels or %)"
+        },
+        "tlY": {
+          "name": "Top-Left Y",
+          "desc": "Y coordinate for top-left corner (pixels or %)"
+        },
+        "trX": {
+          "name": "Top-Right X",
+          "desc": "X coordinate for top-right corner (pixels or %)"
+        },
+        "trY": {
+          "name": "Top-Right Y",
+          "desc": "Y coordinate for top-right corner (pixels or %)"
+        },
+        "blX": {
+          "name": "Bottom-Left X",
+          "desc": "X coordinate for bottom-left corner (pixels or %)"
+        },
+        "blY": {
+          "name": "Bottom-Left Y",
+          "desc": "Y coordinate for bottom-left corner (pixels or %)"
+        },
+        "brX": {
+          "name": "Bottom-Right X",
+          "desc": "X coordinate for bottom-right corner (pixels or %)"
+        },
+        "brY": {
+          "name": "Bottom-Right Y",
+          "desc": "Y coordinate for bottom-right corner (pixels or %)"
+        }
+      }
+    },
+    "contract": {
+      "name": "Contract",
+      "description": "Contract the area of a file by a multiplier.",
+      "args": {
+        "input": {
+          "name": "Input",
+          "desc": "The file to contract."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "How much to contract by."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "Which direction to contract in."
+        },
+        "originY": {
+          "name": "Origin Y",
+          "desc": "Vertical origin point."
+        },
+        "originX": {
+          "name": "Origin X",
+          "desc": "Horizontal origin point."
+        }
+      }
+    },
+    "enlarge": {
+      "name": "Enlarge",
+      "description": "Enlarge a file by a multiplier.",
+      "args": {
+        "input": {
+          "name": "Input",
+          "desc": "The file to enlarge."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "How much to enlarge by."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "Which direction to enlarge in."
+        },
+        "scaleAlgorithm": {
+          "name": "Algorithm",
+          "desc": "Scaling algorithm to use."
+        }
+      }
+    },
+    "expand": {
+      "name": "Expand",
+      "description": "Expand the area of a file by a multiplier.",
+      "args": {
+        "input": {
+          "name": "Input",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "How much to expand by."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "Which direction to expand in."
+        },
+        "originY": {
+          "name": "Origin Y",
+          "desc": "Vertical origin point."
+        },
+        "originX": {
+          "name": "Origin X",
+          "desc": "Horizontal origin point."
+        }
+      }
+    },
+    "scale": {
+      "name": "Scale",
+      "description": "Scale a file to specific dimensions.",
+      "args": {
+        "input": {
+          "name": "Input",
+          "desc": "The file to scale."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Target width in pixels."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Target height in pixels."
+        },
+        "mode": {
+          "name": "Mode",
+          "desc": "Scaling mode to use."
+        },
+        "keepAspectRatio": {
+          "name": "Keep Aspect Ratio?",
+          "desc": "How to handle aspect ratio."
+        },
+        "originY": {
+          "name": "Origin Y",
+          "desc": "Vertical origin point."
+        },
+        "originX": {
+          "name": "Origin X",
+          "desc": "Horizontal origin point."
+        },
+        "scaleAlgorithm": {
+          "name": "Algorithm",
+          "desc": "Scaling algorithm to use."
+        }
+      }
+    },
+    "shrink": {
+      "name": "Shrink",
+      "description": "Shrink a file by a multiplier.",
+      "args": {
+        "input": {
+          "name": "Input",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "How much to shrink by."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "Which direction to shrink in."
+        },
+        "scaleAlgorithm": {
+          "name": "Algorithm",
+          "desc": "Scaling algorithm to use."
+        }
+      }
+    },
+    "zoomin": {
+      "name": "Zoom In",
+      "description": "Zoom in on a file.",
+      "args": {
+        "input": {
+          "name": "Input",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "Zoom multiplier."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "Which direction to zoom in."
+        },
+        "originY": {
+          "name": "Origin Y",
+          "desc": "Vertical origin point."
+        },
+        "originX": {
+          "name": "Origin X",
+          "desc": "Horizontal origin point."
+        },
+        "scaleAlgorithm": {
+          "name": "Algorithm",
+          "desc": "Scaling algorithm to use."
+        }
+      }
+    },
+    "zoomout": {
+      "name": "Zoom Out",
+      "description": "Zoom out from a file.",
+      "args": {
+        "input": {
+          "name": "Input",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "Zoom multiplier."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "Which direction to zoom out."
+        },
+        "originY": {
+          "name": "Origin Y",
+          "desc": "Vertical origin point."
+        },
+        "originX": {
+          "name": "Origin X",
+          "desc": "Horizontal origin point."
+        },
+        "scaleAlgorithm": {
+          "name": "Algorithm",
+          "desc": "Scaling algorithm to use."
+        }
+      }
+    },
+    "pixenlarge": {
+      "name": "Pixel Enlarge",
+      "description": "Enlarges pixel art using specialized algorithms.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "multiplier": {
+          "name": "Multiplier",
+          "desc": "Enlargement factor (2-3-4)."
+        },
+        "filter": {
+          "name": "Filter",
+          "desc": "Pixel scaling algorithm to use."
+        }
+      }
+    },
+    "blend": {
+      "name": "Blend",
+      "description": "Combines two files using a blend mode.",
+      "args": {
+        "base": {
+          "name": "Base File",
+          "desc": "The base file."
+        },
+        "blend": {
+          "name": "Blend File",
+          "desc": "The file to blend."
+        },
+        "mode": {
+          "name": "Blend Mode",
+          "desc": "Blend mode to use."
+        }
+      }
+    },
+    "overlay": {
+      "name": "Overlay",
+      "description": "Overlays one file on top of another.",
+      "args": {
+        "base": {
+          "name": "Base File",
+          "desc": "The base media file that will have another file overlaid on it."
+        },
+        "overlay": {
+          "name": "Overlay File",
+          "desc": "The file that will be overlaid on top of the base file."
+        },
+        "originX": {
+          "name": "Horizontal Origin",
+          "desc": "The horizontal anchor point for the overlay (left/center/right)."
+        },
+        "originY": {
+          "name": "Vertical Origin",
+          "desc": "The vertical anchor point for the overlay (top/middle/bottom)."
+        },
+        "x": {
+          "name": "X Offset",
+          "desc": "Number of pixels to offset the overlay horizontally from the origin."
+        },
+        "y": {
+          "name": "Y Offset",
+          "desc": "Number of pixels to offset the overlay vertically from the origin."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Width of the overlay in pixels or percentage (e.g. 100 or 50%)."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Height of the overlay in pixels or percentage (e.g. 100 or 50%)."
+        },
+        "keepAspectRatio": {
+          "name": "Keep Aspect Ratio?",
+          "desc": "Whether to maintain the original aspect ratio (increase/decrease)."
+        },
+        "start": {
+          "name": "Start Time",
+          "desc": "When to start showing the overlay (timestamp in hh:mm:ss format)."
+        },
+        "end": {
+          "name": "End Time",
+          "desc": "When to stop showing the overlay (timestamp in hh:mm:ss format)."
+        }
+      }
+    },
+    "mask": {
+      "name": "Mask",
+      "description": "Applies a mask to a file.",
+      "args": {
+        "base": {
+          "name": "Base File",
+          "desc": "The base file to apply the mask to."
+        },
+        "mask": {
+          "name": "Mask File",
+          "desc": "The file to use as the mask."
+        },
+        "keep": {
+          "name": "Keep Mode",
+          "desc": "Whether to keep white areas instead of black areas (inverts mask)."
+        },
+        "originX": {
+          "name": "X Origin",
+          "desc": "Horizontal position for mask placement (left/center/right)."
+        },
+        "originY": {
+          "name": "Y Origin",
+          "desc": "Vertical position for mask placement (top/middle/bottom)."
+        },
+        "x": {
+          "name": "X Offset",
+          "desc": "Horizontal offset from origin position in pixels."
+        },
+        "y": {
+          "name": "Y Offset",
+          "desc": "Vertical offset from origin position in pixels."
+        },
+        "width": {
+          "name": "Width",
+          "desc": "Width to resize the mask to (pixels or percentage)."
+        },
+        "height": {
+          "name": "Height",
+          "desc": "Height to resize the mask to (pixels or percentage)."
+        },
+        "keepAspectRatio": {
+          "name": "Keep Aspect Ratio?",
+          "desc": "How to handle aspect ratio when resizing (increase/decrease)."
+        }
+      }
+    },
+    "stack": {
+      "name": "Stack",
+      "description": "Stacks a file multiple times horizontally or vertically.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "count": {
+          "name": "Count",
+          "desc": "Number of additional copies to stack (1-100)."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "Stacking direction (horizontal/vertical)."
+        }
+      }
+    },
+    "merge": {
+      "name": "Merge",
+      "description": "Merges two files together either vertically or horizontally.",
+      "args": {
+        "file1": {
+          "name": "First File",
+          "desc": "The first file to merge."
+        },
+        "file2": {
+          "name": "Second File",
+          "desc": "The second file to merge."
+        },
+        "direction": {
+          "name": "Direction",
+          "desc": "The merge direction (vertical/horizontal)."
+        },
+        "swap": {
+          "name": "Swap?",
+          "desc": "Swap the order of the files."
+        }
+      }
+    },
+    "blur": {
+      "name": "Blur",
+      "description": "Applies a blur effect to the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "radius": {
+          "name": "Radius",
+          "desc": "Blur radius intensity (0-100)."
+        },
+        "power": {
+          "name": "Power",
+          "desc": "Blur strength multiplier (0-100)."
+        }
+      }
+    },
+    "pixelate": {
+      "name": "Pixelate",
+      "description": "Pixelate a file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "size": {
+          "name": "Size",
+          "desc": "Pixel block size (1-100)."
+        }
+      }
+    },
+    "melt": {
+      "name": "Melt",
+      "description": "Creates a trippy melting effect.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "decay": {
+          "name": "Decay",
+          "desc": "Melt intensity (0-100%)."
+        },
+        "loop": {
+          "name": "Loop?",
+          "desc": "Enable infinite looping."
+        }
+      }
+    },
+    "rotate": {
+      "name": "Rotate",
+      "description": "Rotates the file by a certain angle.",
+      "args": {
+        "input": {
+          "name": "File",
+          "desc": "The media file to rotate."
+        },
+        "degrees": {
+          "name": "Degrees",
+          "desc": "Rotation angle (-360 to 360)."
+        },
+        "cut": {
+          "name": "Cut?",
+          "desc": "Crop to original dimensions."
+        }
+      }
+    },
+    "alphaextract": {
+      "name": "Alpha Extract",
+      "description": "Extracts the alpha channel (transparency mask) from an image.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        }
+      }
+    },
+    "caption": {
+      "name": "Caption",
+      "description": "Adds a white box caption to the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "text": {
+          "name": "Text",
+          "desc": "The text to display in the caption."
+        },
+        "size": {
+          "name": "Size",
+          "desc": "Size multiplier for the caption."
+        },
+        "color": {
+          "name": "Text Color",
+          "desc": "RGB color for the text (0-255 for each channel)."
+        },
+        "bgColor": {
+          "name": "Background Color",
+          "desc": "RGB color for the background (0-255 for each channel)."
+        },
+        "font": {
+          "name": "Text Font",
+          "desc": "Font to use when rendering the text."
+        }
+      }
+    },
+    "meme": {
+      "name": "Meme",
+      "description": "Add meme captions (top and bottom text) to a file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "topText": {
+          "name": "Top Text",
+          "desc": "The text to display at the top of the meme."
+        },
+        "bottomText": {
+          "name": "Bottom Text",
+          "desc": "The text to display at the bottom of the meme."
+        },
+        "size": {
+          "name": "Size",
+          "desc": "Text size multiplier."
+        },
+        "borderSize": {
+          "name": "Border Size",
+          "desc": "Text border size multiplier."
+        },
+        "color": {
+          "name": "Color",
+          "desc": "RGB color for the text (0-255 for each channel)."
+        },
+        "borderColor": {
+          "name": "Border Color",
+          "desc": "RGB color for the text border (0-255 for each channel)."
+        },
+        "font": {
+          "name": "Text Font",
+          "desc": "Font to use when rendering the text."
+        }
+      }
+    },
+    "motivator": {
+      "name": "Motivator",
+      "description": "Creates a motivational poster with the file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "topText": {
+          "name": "Top Text",
+          "desc": "The large text that appears at the top (in caps)."
+        },
+        "bottomText": {
+          "name": "Bottom Text",
+          "desc": "The smaller text that appears at the bottom."
+        },
+        "color": {
+          "name": "Text Color",
+          "desc": "RGB color for the text (0-255 for each channel)."
+        },
+        "bgColor": {
+          "name": "Background Color",
+          "desc": "RGB color for the background (0-255 for each channel)."
+        },
+        "topFont": {
+          "name": "Top Text Font",
+          "desc": "Font to use when rendering the top text."
+        },
+        "bottomFont": {
+          "name": "Bottom Text Font",
+          "desc": "Font to use when rendering the bottom text."
+        }
+      }
+    },
+    "tenorcaption": {
+      "name": "Tenor Caption",
+      "description": "Adds a Tenor-style caption to the top and bottom of a file.",
+      "args": {
+        "input": {
+          "name": "Input File",
+          "desc": "The input file."
+        },
+        "topText": {
+          "name": "Top Text",
+          "desc": "Text to display at the top of the image."
+        },
+        "bottomText": {
+          "name": "Bottom Text",
+          "desc": "Text to display at the bottom of the image."
+        },
+        "size": {
+          "name": "Size",
+          "desc": "Text size multiplier."
+        },
+        "borderSize": {
+          "name": "Border Size",
+          "desc": "Text border size multiplier."
+        },
+        "color": {
+          "name": "Color",
+          "desc": "RGB color for the text (0-255 for each channel)."
+        },
+        "borderColor": {
+          "name": "Border Color",
+          "desc": "RGB color for the text border (0-255 for each channel)."
+        },
+        "font": {
+          "name": "Text Font",
+          "desc": "Font to use when rendering the text."
+        }
+      }
+    },
+    "localcommand": {
+      "name": "Create Local Command",
+      "description": "Create a new local command.",
+      "args": {
+        "name": {
+          "name": "Name",
+          "desc": "The name of the local command."
+        },
+        "description": {
+          "name": "Description",
+          "desc": "A short description of what this command does."
+        },
+        "args": {
+          "name": "Arguments",
+          "desc": "The arguments this local command accepts.",
+          "columns": {
+            "name": {
+              "name": "Name",
+              "desc": "The name of the argument."
+            },
+            "desc": {
+              "name": "Description",
+              "desc": "Description of what the argument does."
+            },
+            "type": {
+              "name": "Type",
+              "desc": "The type of the argument (string, number, etc.)."
+            },
+            "required": {
+              "name": "Required",
+              "desc": "Whether the argument is required."
+            },
+            "settings": {
+              "name": "Settings",
+              "desc": "Additional settings for this argument."
+            },
+            "dft": {
+              "name": "Default Value",
+              "desc": "The default value if none is provided."
+            }
+          }
+        },
+        "phrase": {
+          "name": "Trigger Phrase",
+          "desc": "The phrase that will trigger this local command."
+        }
+      }
+    },
+    "evalkeywords": {
+      "name": "Evaluate Keywords",
+      "description": "Parses and evaluates the provided keywords.",
+      "args": {
+        "phrase": {
+          "name": "Phrase",
+          "desc": "The phrase from which keywords will be extracted."
+        }
+      }
+    }
+  },
+  "categories": {
+    "animation": "Animation",
+    "color": "Coloring",
+    "duration": "Duration",
+    "resizing": "Resizing",
+    "captions": "Captions",
+    "effects": "Effects",
+    "overlaying": "Overlaying",
+    "local": "Local"
+  },
+  "globalArgs": {
+    "encodingPreset": {
+      "name": "Encoding Preset",
+      "desc": "The preset used for encoding. Slower presets provide better compression."
+    }
+  },
+  "argValues": {
+    "originX": {
+      "left": "Left",
+      "center": "Center",
+      "right": "Right"
+    },
+    "originY": {
+      "top": "Top",
+      "middle": "Middle",
+      "bottom": "Bottom"
+    },
+    "direction": {
+      "horizontal": "Horizontal",
+      "vertical": "Vertical",
+      "both": "Both"
+    },
+    "keepAspectRatio": {
+      "no": "No",
+      "increase": "Increase",
+      "decrease": "Decrease"
+    },
+    "encodingPreset": {
+      "ultrafast": "Ultrafast",
+      "superfast": "Superfast",
+      "veryfast": "Veryfast",
+      "faster": "Faster",
+      "fast": "Fast",
+      "medium": "Medium",
+      "slow": "Slow",
+      "slower": "Slower",
+      "veryslow": "Veryslow"
+    },
+    "colorize": {
+      "tint": "Tint",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "easingStyle": {
+      "linear": "Linear",
+      "constant": "Constant",
+      "sine": "Sine",
+      "quad": "Quad",
+      "cubic": "Cubic",
+      "quart": "Quart",
+      "quint": "Quint",
+      "expo": "Expo",
+      "circ": "Circ",
+      "back": "Back",
+      "elastic": "Elastic",
+      "bounce": "Bounce"
+    },
+    "easingDirection": {
+      "in": "In",
+      "out": "Out",
+      "inOut": "In-Out"
+    },
+    "scaleMode": {
+      "scale": "Scale",
+      "area": "Area",
+      "zoom": "Zoom"
+    },
+    "scaleAlgorithm": {
+      "fast_bilinear": "Fast Bilinear",
+      "bilinear": "Bilinear",
+      "bicubic": "Bicubic",
+      "experimental": "Experimental",
+      "neighbor": "Nearest Neighbor",
+      "area": "Area Averaging",
+      "bicublin": "Bicublin",
+      "gauss": "Gaussian",
+      "sinc": "Sinc",
+      "lanczos": "Lanczos",
+      "spline": "Bicubic Spline",
+      "print_info": "Print Info",
+      "accurate_rnd": "Accurate Rounding",
+      "full_chroma_int": "Full Chroma Interpolation",
+      "full_chroma_inp": "Full Chroma Input",
+      "bitexact": "Bit Exact"
+    },
+    "pixFilter": {
+      "xbr": "xBR (Edge-directed)",
+      "hqx": "HQX (High Quality)"
+    },
+    "transition": {
+      "fade": "Fade",
+      "none": "None",
+      "wipeLeft": "Wipe Left",
+      "wipeRight": "Wipe Right",
+      "wipeUp": "Wipe Up",
+      "wipeDown": "Wipe Down",
+      "slideLeft": "Slide Left",
+      "slideRight": "Slide Right",
+      "slideUp": "Slide Up",
+      "slideDown": "Slide Down",
+      "circleCrop": "Circle Crop",
+      "rectCrop": "Rectangle Crop",
+      "distance": "Distance",
+      "fadeBlack": "Fade to Black",
+      "fadeWhite": "Fade to White",
+      "radial": "Radial",
+      "smoothLeft": "Smooth Left",
+      "smoothRight": "Smooth Right",
+      "smoothUp": "Smooth Up",
+      "smoothDown": "Smooth Down",
+      "circleOpen": "Circle Open",
+      "circleClose": "Circle Close",
+      "vertOpen": "Vertical Open",
+      "vertClose": "Vertical Close",
+      "horzOpen": "Horizontal Open",
+      "horzClose": "Horizontal Close",
+      "dissolve": "Dissolve",
+      "pixelize": "Pixelize",
+      "diagTl": "Diagonal Top-Left",
+      "diagTr": "Diagonal Top-Right",
+      "diagBl": "Diagonal Bottom-Left",
+      "diagBr": "Diagonal Bottom-Right",
+      "hlSlice": "Horizontal Left Slice",
+      "hrSlice": "Horizontal Right Slice",
+      "vuSlice": "Vertical Up Slice",
+      "vdSlice": "Vertical Down Slice",
+      "random": "Random"
+    },
+    "waitMode": {
+      "clone": "Clone",
+      "add": "Add"
+    },
+    "pseudocolorPreset": {
+      "magma": "Magma",
+      "inferno": "Inferno",
+      "plasma": "Plasma",
+      "viridis": "Viridis",
+      "turbo": "Turbo",
+      "cividis": "Cividis",
+      "range1": "Range 1",
+      "range2": "Range 2",
+      "shadows": "Shadows",
+      "highlights": "Highlights",
+      "solar": "Solar",
+      "nominal": "Nominal",
+      "preferred": "Preferred",
+      "total": "Total"
+    },
+    "blendMode": {
+      "addition": "Addition",
+      "and": "And",
+      "average": "Average",
+      "burn": "Burn",
+      "bleach": "Bleach",
+      "darken": "Darken",
+      "difference": "Difference",
+      "divide": "Divide",
+      "dodge": "Dodge",
+      "freeze": "Freeze",
+      "exclusion": "Exclusion",
+      "extremity": "Extremity",
+      "geometric": "Geometric",
+      "glow": "Glow",
+      "grainExtract": "Grain Extract",
+      "grainMerge": "Grain Merge",
+      "hardLight": "Hard Light",
+      "hardOverlay": "Hard Overlay",
+      "harmonic": "Harmonic",
+      "interpolate": "Interpolate",
+      "hardMix": "Hard Mix",
+      "heat": "Heat",
+      "lighten": "Lighten",
+      "linearLight": "Linear Light",
+      "multiply": "Multiply",
+      "multiply128": "Multiply 128",
+      "negation": "Negation",
+      "normal": "Normal",
+      "or": "Or",
+      "overlay": "Overlay",
+      "phoenix": "Phoenix",
+      "pinLight": "Pin Light",
+      "reflect": "Reflect",
+      "screen": "Screen",
+      "stain": "Stain",
+      "softLight": "Soft Light",
+      "softDifference": "Soft Difference",
+      "subtract": "Subtract",
+      "vividLight": "Vivid Light",
+      "xor": "Xor"
+    },
+    "playback": {
+      "reverse": "Reverse",
+      "boomerang": "Boomerang",
+      "reverseBoomerang": "Reverse Boomerang"
+    },
+    "fontStyle": {
+      "Normal": "Normal",
+      "Italic": "Italic",
+      "Oblique": "Oblique",
+      "Thin": "Thin",
+      "ExtraLight": "Extra Light",
+      "Light": "Light",
+      "Medium": "Medium",
+      "DemiBold": "Demi Bold",
+      "Bold": "Bold",
+      "ExtraBold": "Extra Bold",
+      "Black": "Black",
+      "UltraCondensed": "Ultra Condensed",
+      "ExtraCondensed": "Extra Condensed",
+      "Condensed": "Condensed",
+      "SemiCondensed": "Semi Condensed",
+      "SemiExpanded": "Semi Expanded",
+      "Expanded": "Expanded",
+      "ExtraExpanded": "Extra Expanded",
+      "UltraExpanded": "Ultra Expanded"
+    },
+    "argType": {
+      "string": "String",
+      "integer": "Integer",
+      "number": "Number",
+      "boolean": "Boolean",
+      "file": "File"
+    }
+  },
+  "special": {
+    "functions": {
+      "repeat": {
+        "description": "Repeat a phrase multiple times.",
+        "args": {
+          "phrase": {
+            "desc": "The phrase to repeat."
+          },
+          "times": {
+            "desc": "Number of times to repeat the phrase."
+          },
+          "separator": {
+            "desc": "String to place between repetitions."
+          }
+        }
+      },
+      "rawrepeat": {
+        "description": "Repeat a phrase multiple times, processing keywords each time.",
+        "args": {
+          "phrase": {
+            "desc": "The phrase to repeat, with keywords allowed."
+          },
+          "times": {
+            "desc": "Number of times to repeat the phrase."
+          },
+          "separator": {
+            "desc": "String to place between repetitions."
+          }
+        }
+      },
+      "random": {
+        "description": "Generates a random number within a range.",
+        "args": {
+          "min": {
+            "desc": "Minimum value (inclusive)."
+          },
+          "max": {
+            "desc": "Maximum value (inclusive)."
+          }
+        }
+      },
+      "arg": {
+        "description": "Returns the raw value of a specific argument.",
+        "args": {
+          "name": {
+            "desc": "The name of the argument to return."
+          }
+        }
+      },
+      "command": {
+        "description": "Executes a command and returns its output.",
+        "args": {
+          "name": {
+            "desc": "The name of the command to execute."
+          },
+          "args": {
+            "desc": "The raw arguments to pass to the command."
+          }
+        }
+      },
+      "declare": {
+        "description": "Declares a new variable with a static value.",
+        "args": {
+          "name": {
+            "desc": "The name of the variable to declare."
+          },
+          "value": {
+            "desc": "The value to assign to the variable."
+          }
+        }
+      },
+      "if": {
+        "description": "Conditionally evaluates a value based on a boolean.",
+        "args": {
+          "condition": {
+            "desc": "The condition to evaluate as a boolean."
+          },
+          "then": {
+            "desc": "The value if the condition is true."
+          },
+          "else": {
+            "desc": "The value if the condition is false."
+          }
+        }
+      },
+      "rawdeclare": {
+        "description": "Declares a variable whose value is evaluated as keywords.",
+        "args": {
+          "name": {
+            "desc": "The name of the variable to declare."
+          },
+          "value": {
+            "desc": "The variable content to evaluate when accessed."
+          }
+        }
+      },
+      "return": {
+        "description": "Returns a final value from a keyword sequence.",
+        "args": {
+          "value": {
+            "desc": "The value to return."
+          }
+        }
+      },
+      "returnfile": {
+        "description": "Returns a file as the final result.",
+        "args": {
+          "path": {
+            "desc": "The path of the file to return."
+          }
+        }
+      },
+      "undeclare": {
+        "description": "Removes a previously declared keyword.",
+        "args": {
+          "name": {
+            "desc": "The name of the keyword to undeclare."
+          }
+        }
+      },
+      "noArgs": "The set of values to evaluate from."
+    },
+    "keywords": {
+      "animal": {
+        "description": "Returns a random animal name.",
+        "list": [
+          "aardvark",
+          "addax",
+          "alligator",
+          "alpaca",
+          "ant",
+          "anteater",
+          "antelope",
+          "aoudad",
+          "ape",
+          "argali",
+          "armadillo",
+          "baboon",
+          "badger",
+          "bald eagle",
+          "barnacle",
+          "basilisk",
+          "bat",
+          "bear",
+          "beaver",
+          "bee",
+          "bighorn",
+          "bison",
+          "blue crab",
+          "boar",
+          "budgerigar",
+          "buffalo",
+          "bull",
+          "bumble bee",
+          "bunny",
+          "burro",
+          "butterfly",
+          "camel",
+          "canary",
+          "capybara",
+          "cat",
+          "centipede",
+          "chameleon",
+          "chamois",
+          "cheetah",
+          "chicken",
+          "chimpanzee",
+          "chinchilla",
+          "chipmunk",
+          "civet",
+          "clam",
+          "coati",
+          "cockroach",
+          "coldfish",
+          "colt",
+          "cola",
+          "condor",
+          "cougar",
+          "cow",
+          "crab",
+          "crocodile",
+          "crow",
+          "deer",
+          "dingo",
+          "doe",
+          "dog",
+          "dormouse",
+          "dragonfly",
+          "dromedary",
+          "duckbill platypus",
+          "dugong",
+          "dung beetle",
+          "eagle owl",
+          "earthworm",
+          "eland",
+          "eel",
+          "elephant",
+          "emu",
+          "ermine",
+          "ewe",
+          "fawn",
+          "ferret",
+          "finch",
+          "fish",
+          "fly",
+          "fox",
+          "frog",
+          "gazelle",
+          "gemsbok",
+          "gila monster",
+          "giraffe",
+          "goat",
+          "goose",
+          "gopher",
+          "gorilla",
+          "grasshopper",
+          "grizzly bear",
+          "ground hog",
+          "guanaco",
+          "guinea pig",
+          "hare",
+          "hartebeest",
+          "hedgehog",
+          "highland cow",
+          "hippopotamus",
+          "hog",
+          "horse",
+          "hummingbird",
+          "hyena",
+          "ibex",
+          "iguana",
+          "impala",
+          "jackal",
+          "jaguar",
+          "jellyfish",
+          "jerboa",
+          "kangaroo",
+          "kitten",
+          "koala",
+          "lamb",
+          "ladybug",
+          "lemur",
+          "leopard",
+          "lion",
+          "lizard",
+          "llama",
+          "lobster",
+          "lovebird",
+          "lynx",
+          "mandrill",
+          "mare",
+          "marmoset",
+          "marten",
+          "millipede",
+          "mink",
+          "mole",
+          "mongoose",
+          "monkey",
+          "moose",
+          "mosquito",
+          "moth",
+          "mule",
+          "musk deer",
+          "musk-ox",
+          "muskrat",
+          "mustang",
+          "mynah bird",
+          "newt",
+          "ocelot",
+          "octopus",
+          "okapi",
+          "opossum",
+          "orangutan",
+          "oryx",
+          "ostrich",
+          "otter",
+          "ox",
+          "oyster",
+          "panda",
+          "panther",
+          "parakeet",
+          "parrot",
+          "peacock",
+          "peccary",
+          "penguin",
+          "pig",
+          "pigeon",
+          "polar bear",
+          "pony",
+          "porcupine",
+          "porpoise",
+          "prairie dog",
+          "pronghorn",
+          "pufferfish",
+          "puma",
+          "puppy",
+          "quagga",
+          "rabbit",
+          "raccoon",
+          "ram",
+          "rat",
+          "ray",
+          "reindeer",
+          "rhinoceros",
+          "salamander",
+          "scorpion",
+          "seahorse",
+          "seal",
+          "shark",
+          "sheep",
+          "shrew",
+          "shrimp",
+          "silver fox",
+          "skunk",
+          "sloth",
+          "slug",
+          "snail",
+          "snake",
+          "snowy owl",
+          "sparrow",
+          "spider",
+          "squid",
+          "springbok",
+          "squirrel",
+          "stallion",
+          "steer",
+          "starfish",
+          "stingray",
+          "stork",
+          "swan",
+          "tapir",
+          "termite",
+          "tick",
+          "tiger",
+          "toad",
+          "tortoise",
+          "turkey",
+          "turtle",
+          "vicuna",
+          "walrus",
+          "warthog",
+          "waterbuck",
+          "weasel",
+          "whale",
+          "wildcat",
+          "wolf",
+          "wolverine",
+          "wombat",
+          "woodchuck",
+          "woodpecker",
+          "yak",
+          "zebra",
+          "zebu"
+        ]
+      }
+    }
+  },
+  "gui": {
+    "sidebar": {
+      "none": "There are no\ncommands here...",
+      "commands": "Commands",
+      "favorites": "Favorites",
+      "recents": "Recents"
+    },
+    "menu": {
+      "desc": "Additional options",
+      "loadState": "Load from existing state",
+      "saveState": "Save current state",
+      "keywords": "Keyword mode",
+      "reset": "Reset default values",
+      "deleteLocalCommand": "Delete local command",
+      "addFavorite": "Add command to favorites",
+      "removeFavorite": "Remove command from favorites",
+      "showSidebar": "Show sidebar",
+      "hideSidebar": "Hide sidebar",
+      "showTasklist": "Show task list",
+      "hideTasklist": "Hide task list",
+      "cut": "Cut",
+      "copy": "Copy",
+      "paste": "Paste",
+      "selectAll": "Select all",
+      "delete": "Delete",
+      "easingStyle": "Easing Style",
+      "easingDirection": "Easing Direction"
+    },
+    "tasks": {
+      "statusText": {
+        "running": "Running...",
+        "completed": "Completed.",
+        "failed": "Failed.",
+        "cancelling": "Cancelling...",
+        "cancelled": "Cancelled.",
+        "killed": "Killed."
+      },
+      "title": "Tasks",
+      "task": "Task",
+      "none": "No tasks are\nbeing processed yet...",
+      "command": "Command",
+      "status": "Status",
+      "processes": "Processes",
+      "paths": "Paths",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "show": "Show",
+      "forceCancel": "Force Cancel"
+    },
+    "mainTitle": "Welcome to RapidRend!",
+    "mainDescription": "Select a command from the sidebar to begin.",
+    "executeButton": "Execute",
+    "executingButton": "Executing...",
+    "searchPlaceholder": "Search...",
+    "saveFile": "Save...",
+    "openFile": "Open File",
+    "openFolder": "Open Folder",
+    "fileSaved": "File saved to",
+    "readingFile": "Reading files...",
+    "filesSelected": "files selected.",
+    "previewLoaded": "Preview loaded successfully.",
+    "processedFile": "Processed file",
+    "commandOutput": "Output",
+    "argFields": {
+      "string": "Enter",
+      "file": "Select...",
+      "number": "Enter a number",
+      "pixels": "Enter pixels or %",
+      "timestamp": "Enter a timestamp",
+      "color": "Choose a color",
+      "font": "Choose a font...",
+      "fontStyle": "Style...",
+      "arguments": "Add row",
+      "unsupported": "Unsupported argument type",
+      "more": "More options..."
+    }
+  },
+  "cli": {
+    "help": {
+      "execute": "Usage:\n  rapidcli <command> [options]",
+      "commandsListHeader": "Available command categories:",
+      "usage": "You can also use:",
+      "keywordUsage": "Keyword system:",
+      "flags": "Flags:",
+      "guiFlags": "GUI Flags:",
+      "info": "Show help information.",
+      "version": "Show app version.",
+      "verbose": "Enable verbose mode.",
+      "noNewline": "Don't add a newline to outputs.",
+      "theme": "Choose the default theme (light/dark).",
+      "commands": {
+        "usage": "List all available commands.",
+        "overview": "Available commands:",
+        "forCategory": "Commands in category %s:",
+        "categoryUsage": "List commands in a category.",
+        "invalidCategory": "Invalid category: %s",
+        "commandUsage": "Show help for a specific command.",
+        "invalidCommand": "Invalid command: %s",
+        "argsHeader": "Arguments:"
+      },
+      "keywords": {
+        "usage": "List available keywords.",
+        "overview": "Available keywords:",
+        "keywordUsage": "Show help for a specific keyword.",
+        "invalidKeyword": "Invalid keyword: %s",
+        "valuesHeader": "Possible values:"
+      },
+      "functions": {
+        "usage": "List available functions.",
+        "overview": "Available functions:",
+        "functionUsage": "Show help for a specific function.",
+        "invalidFunction": "Invalid function: %s",
+        "argsHeader": "Arguments:"
+      }
+    }
+  },
+  "editors": {
+    "commands": {
+      "crop": "Crop",
+      "overlay": "Overlay",
+      "perspective": "Perspective",
+      "tween": "Tween"
+    },
+    "title": "%s Editor",
+    "undo": "Undo changes",
+    "error": "The argument \"%s\" has not been specified."
+  },
+  "infoPost": {
+    "validateFile": "Validating file from path",
+    "cantProcessFile": "File can't be processed",
+    "fileValidated": "File \"%s\" was successfully validated",
+    "commandTask": "Task #%s %s",
+    "taskStatus": {
+      "running": "is running...",
+      "completed": "has been completed.",
+      "failed": "has failed.",
+      "cancelling": "is being cancelled...",
+      "cancelled": "has been cancelled.",
+      "killed": "has been killed."
+    }
+  },
+  "errorMessages": {
+    "fileNotFound": "File not found",
+    "unsupportedFileType": "Unsupported file of type",
+    "unsupportedFileExt": "Unsupported file of extension",
+    "invalidArgument": "Invalid argument",
+    "invalidCommand": "This command does not exist",
+    "requiredArgument": "A required argument has not been specified"
+  },
+  "popupDisplay": {
+    "status": {
+      "error": {
+        "title": "Error",
+        "format": "%s Error!",
+        "openFile": "File Opening",
+        "argumentParse": "Argument Parsing",
+        "argumentFieldParse": "Argument Field Parsing",
+        "argumentValidate": "Argument Validation",
+        "commandExecute": "Command Execution",
+        "editorOpening": "Editor Opening",
+        "loadState": "State Loading",
+        "saveState": "State Saving"
+      },
+      "success": {
+        "title": "Success",
+        "format": "%s",
+        "localCommandTitle": "Local command successfully created.",
+        "localCommandDesc": "You can now use \"%s\" from the sidebar.",
+        "saveStateTitle": "Current state successfully saved.",
+        "saveStateDesc": "You can now load the current state of arguments from the saved JSON file."
+      }
+    }
+  }
+}

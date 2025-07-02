@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=RapidRend
+Exec=/opt/rapidrend/rapidrend
+Terminal=false
+Type=Application
+Comment=An all-purpose application for media manipulation.
+Categories=Utility;AudioVideo;
+Icon=rapidrend
