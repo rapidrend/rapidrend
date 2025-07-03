@@ -6,19 +6,19 @@
       {
         "platform": ["linux"],
         "commands": [
-          "cd $fetchStep_sourcePath && cp ../../../bin/* bin"
+          "cd $fetchStep_sourcePath && cp ../../../bin/* bin -r"
         ]
       },
       {
         "platform": ["macos"],
         "commands": [
-          "cd $fetchStep_sourcePath && cp ../../../bin/* bin"
+          "cd $fetchStep_sourcePath && cp ../../../bin/* bin -r"
         ]
       },
       {
         "platform": ["windows"],
         "commands": [
-          "cd $fetchStep_sourcePath && copy ..\\\\..\\\\..\\\\bin bin"
+          "cd $fetchStep_sourcePath && xcopy ..\\\\..\\\\..\\\\bin bin /E /I /H /Y"
         ]
       }
     ]
