@@ -32,7 +32,7 @@ module.exports = {
                 await execPromise(`magick -background "${backgroundColor}" -fill "${textColor}" \
                     -font "${font}" -gravity center \
                     -pointsize ${size} -size 460x \
-                    caption:"${text.replace(/"/g, '\\"')}" \
+                    caption:"${text.replace(/"/g, '\\"').replace(/\\/g, "\\\\")}" \
                     -bordercolor "${backgroundColor}" -border 20x${border} \
                     "${outputPath}"`);
             } else {
@@ -43,10 +43,10 @@ module.exports = {
         
         await Promise.all([
             createCaptionImage(
-                topText, topFont ?? getAsset("font", "times"), 48, 0, topCaptionPath
+                topText, topFont ?? getAsset("font", "times").replace(/\\/g, "\\\\"), 48, 0, topCaptionPath
             ),
             createCaptionImage(
-                bottomText, bottomFont ?? getAsset("font", "arial"), 20, 10, bottomCaptionPath
+                bottomText, bottomFont ?? getAsset("font", "arial").replace(/\\/g, "\\\\"), 20, 10, bottomCaptionPath
             )
         ]);
 

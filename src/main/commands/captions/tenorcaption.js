@@ -32,9 +32,9 @@ module.exports = {
         const createCaptionImage = async (text, outputPath) => {
             if (text.trim()) {
                 await execPromise(`magick -background none -fill "${textColor}" \
-                    -font "${font ?? getAsset("font", "ubuntu")}" -gravity center \
+                    -font "${font ?? getAsset("font", "ubuntu").replace(/\\/g, "\\\\")}" -gravity center \
                     -pointsize ${fontSize} -size ${width - fontMargin * 2}x \
-                    caption:"${text.replace(/"/g, '\\"')}" \
+                    caption:"${text.replace(/"/g, '\\"').replace(/\\/g, "\\\\")}" \
                     -bordercolor none -border ${fontMargin} \
                     -alpha on "${outputPath}"`);
                 return true;

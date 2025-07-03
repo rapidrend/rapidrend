@@ -32,9 +32,9 @@ module.exports = {
 
         if (text.trim()) {
             await execPromise(`magick -background "${backgroundColor}" -fill "${textColor}" \
-                -font "${font ?? getAsset("font", "futura")}" -gravity center \
+                -font "${font ?? getAsset("font", "futura").replace(/\\/g, "\\\\")}" -gravity center \
                 -pointsize ${fontSize} -size ${width - fontMargin * 2}x \
-                caption:"${text.replace(/"/g, '\\"')}" \
+                caption:"${text.replace(/"/g, '\\"').replace(/\\/g, "\\\\")}" \
                 -bordercolor "${backgroundColor}" -border ${fontMargin} \
                 -alpha on "${captionPath}"`);
         } else {

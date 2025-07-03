@@ -147,9 +147,9 @@ module.exports = {
     },
 
     alt: {
-        ffmpeg: () => path.join(__appPath, "bin", `ffmpeg${os.platform() == "win32" ? ".exe" : ""}`),
-        ffprobe: () => path.join(__appPath, "bin", `ffprobe${os.platform() == "win32" ? ".exe" : ""}`),
-        gmic: () => path.join(__appPath, "bin", `ffprobe${os.platform() == "win32" ? ".exe" : ""}`),
-        magick: () => path.join(__appPath, "bin", `magick${os.platform() == "win32" ? ".exe" : ""}`)
+        ffmpeg: () => path.join(__appPath, "bin", "ffmpeg", `ffmpeg${os.platform() == "win32" ? ".exe" : ""}`),
+        ffprobe: () => path.join(__appPath, "bin", "ffmpeg", `ffprobe${os.platform() == "win32" ? ".exe" : ""}`),
+        gmic: () => path.join(__appPath, "bin", "gmic", `gmic${os.platform() == "win32" ? ".exe" : ""}`),
+        magick: () => path.join(__appPath, "bin", "magick", `magick${os.platform() == "win32" ? ".exe" : ""}`)
     }
 }
