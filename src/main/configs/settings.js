@@ -1,5 +1,5 @@
 module.exports = {
-    language: "en",
+    language: "pt-PT",
     favorites: [],
     localCommands: {}
 }

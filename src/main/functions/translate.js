@@ -1,10 +1,12 @@
 const path = require("path");
 const fs = require("fs-extra");
 
-function loadTranslations(lang = "en") {
+const defaultSettings = require("../configs/settings");
+
+function loadTranslations(lang = defaultSettings.language) {
     if (!global.appTranslations) {
         global.appTranslations = {
-            current: "en",
+            current: defaultSettings.language,
             data: {}
         };
     }

@@ -25,7 +25,7 @@
   },
   "build": {
     "applicationName": "RapidRend",
-    "applicationVersion": "0.7.0",
+    "applicationVersion": "0.7.1",
     "packageManager": "npm"
   },
   "prune": {
@@ -68,8 +68,8 @@
     "skip": true,
     "jsEntryPoint": "dist/index.js",
     "windowsIcon": "windows/rapidrend.ico",
-    "windowsVersionString": "0.7.0",
-    "windowsFileVersion": "0.7.0",
+    "windowsVersionString": "0.7.1",
+    "windowsFileVersion": "0.7.1",
     "windowsProductName": "RapidRend",
     "windowsLegalCopyright": "Copyright (c) 2024-2025 rapidrend",
     "windowsOriginalFilename": "rapidrend.exe",
