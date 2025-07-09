@@ -42,30 +42,10 @@
           "assets/**/*"
         ]
       }
-    ],
-    "postPrune": [
-      {
-        "platform": ["linux"],
-        "commands": [
-          "cd $fetchStep_sourcePath && cp $pruneStep_trashDirectory/packaging/linux/rapidrend ."
-        ]
-      },
-      {
-        "platform": ["macos"],
-        "commands": [
-          "cd $fetchStep_sourcePath && cp $pruneStep_trashDirectory/packaging/macos/rapidrend ."
-        ]
-      },
-      {
-        "platform": ["windows"],
-        "commands": [
-          "cd $fetchStep_sourcePath && copy $pruneStep_trashDirectory\\\\packaging\\\\windows\\\\rapidrend.exe"
-        ]
-      }
     ]
   },
   "addLauncher": {
-    "skip": true,
+    "skip": false,
     "jsEntryPoint": "dist/index.js",
     "windowsIcon": "windows/rapidrend.ico",
     "windowsVersionString": "0.7.1",
