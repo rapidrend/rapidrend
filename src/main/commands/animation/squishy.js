@@ -22,7 +22,7 @@ module.exports = {
             case "gif":
                 tempPath = makeTempPath("gif");
                 await execPromise(`ffmpeg -stream_loop -1 -t ${duration} ${ext === "jpg" ? "-f image2 " : ""}-i "${filePath}" \
-                    -r 50 -stream_loop -1 -t ${duration} -i ${getAsset("image", "transparent")} \
+                    -r 50 -stream_loop -1 -t ${duration} -i "${getAsset("image", "transparent")}" \
                     -filter_complex "[1:v][0:v]scale2ref[transparent][overlay];\
                     [overlay]fps=50,scale=iw+sin(PI/2*(t*4/${duration}))*(iw/4)-(ih/4):ih+cos(PI/2*(t*4/${duration}))*(ih/4)-(ih/4):eval=frame[ooverlay];\
                     [transparent][ooverlay]overlay=x=(W-w)/2:y=(H-h)/2:format=auto,scale='min(400,iw)':'min(400,ih)':force_original_aspect_ratio=decrease,split[pout][ppout];\
@@ -34,7 +34,7 @@ module.exports = {
             case "video":
                 tempPath = makeTempPath("mp4");
                 await execPromise(`ffmpeg -r ${fps.includes("0/0") ? "60" : fps} -i "${filePath}" \
-                    -r ${fps.includes("0/0") ? "60" : fps} -i ${getAsset("image", "transparent")} \
+                    -r ${fps.includes("0/0") ? "60" : fps} -i "${getAsset("image", "transparent")}" \
                     -filter_complex "[1:v][0:v]scale2ref[transparent][overlay];\
                     [overlay]fps=50,scale=iw+sin(PI/2*(t*4/${duration}))*(iw/4)-(ih/4):ih+cos(PI/2*(t*4/${duration}))*(ih/4)-(ih/4):eval=frame[ooverlay];\
                     [transparent][ooverlay]overlay=x=(W-w)/2:y=(H-h)/2:format=auto[out]" \
