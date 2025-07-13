@@ -1,5 +1,9 @@
 const keywords = {
-    _animal: require("./animal")
+    _animal: require("./animal"),
+    _country: require("./country"),
+    _color: require("./color"),
+    _person: require("./person"),
+    _food: require("./food")
 };
 
 for (let [keyName, key] of Object.entries(keywords)) {

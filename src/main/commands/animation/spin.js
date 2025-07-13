@@ -16,7 +16,7 @@ module.exports = {
 
         const { path: filePath, type: { ext } } = file;
 
-        const dimensions = cut ? "" : `:ow=hypot(iw,ih):oh=ow`;
+        const dimensions = cut ? "" : `:ow='hypot(iw,ih)':oh=ow`;
 
         let tempPath = makeTempPath("gif");
 

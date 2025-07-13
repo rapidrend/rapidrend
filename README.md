@@ -57,7 +57,7 @@ O RapidRend é uma aplicação multiplataforma para manipulação eficiente de f
 O executável estará na pasta `tmp-jam-pack-nodegui`.
 
 ### 📸 Demonstração
-![GUI Preview](docs/gui-preview.png)
+![GUI Preview](https://rapidrend.vercel.app/screenshot.png)
 
 ---
 
